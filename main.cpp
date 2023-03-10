@@ -1,7 +1,7 @@
-
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include <list>
 using namespace std;
 
 struct filme {
@@ -43,6 +43,14 @@ int main() {
     vector<int> cntCat(m, 0); // armazena o número de filmes assistidos em cada categoria, sendo m o tamanho do vetor e o valor inicial de cada elemento é zero
     vector<filme> selected; // lista dos filmes selecionados
 
+    //list<filme> selected;
+
+    vector<int> duracao(n);
+    //vector<int> maratona(23);
+    double dia = 23;
+    int maratonaPoint;
+    int maratona = 0;
+
     for (int i = 0; i < n; i++) {
       if (filmes[i].fim - filmes[i].inicio < 0) {
           continue;
@@ -53,32 +61,43 @@ int main() {
           continue;
       }
 
-      cout << "catQuant: " << cntCat[filmes[i].categoria-1] << " " << "maxPorCat: " << max_filmes[filmes[i].categoria-1] << endl;
+      //cout << "catQuant: " << cntCat[filmes[i].categoria-1] << " " << "maxPorCat: " << max_filmes[filmes[i].categoria-1] << endl;
 
-      cntCat[filmes[i].categoria-1]++;
+      duracao[i] = filmes[i].fim - filmes[i].inicio;
+      //cout << "Inicio filme: " << filmes[i].inicio << endl;
+      //cout << "Fim filme: " << filmes[i].fim << endl;
+      //cout << "Duracao: " << duracao[i] << endl;
 
-      for (int j = i + 1; j < n; j++) {
-          if (filmes[j].inicio > filmes[i].fim) {
-              i = j - 1;
-              selQuant++;
-              selected.push_back(filmes[i]);
-              break;
-          }
+      //cout << "Maratona: " << maratona << endl;
+
+      if (duracao[i] <= dia and filmes[i].inicio >= maratona) {
+        cntCat[filmes[i].categoria-1]++;
+        maratona += duracao[i];
+        selected.push_back(filmes[i]);
+        dia-=duracao[i];
       }
+      //else break;
+    
+      
     }
-
     // -------- OUTPUT --------
-    cout << "Máximo de filmes que pode ser assistidos: " << selQuant << endl;
+    //cout << "Maratona2: " << maratona << endl;
+    selected.reserve(selected.size());
+    cout << "Máximo de filmes que pode ser assistidos: " << selected.size() << endl;
 
     // filmes selecionados para assistir
     for (int s = 0; s < selected.size(); s++) {
       cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
-    }
+    } 
 
 
   return 0;
 }
 
+
 // CMD:
 // g++ -o filmesM filmesM.cpp
 // ./filmesM < "input.txt"
+
+// g++ -o main main.cpp
+// ./main < "input.txt"
