@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     int m = atoi(argv[2]);
 
     ofstream inputFile;
-    inputFile.open("input.txt");
+    inputFile.open("input2.txt");
     inputFile << n << " " << m << endl;
 
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
@@ -42,3 +42,6 @@ int main(int argc, char *argv[]) {
     inputFile.close();
     return 0;
 }
+
+// g++ -o gerador gerador.cpp
+// ./gerador 10 5
