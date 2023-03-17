@@ -4,13 +4,14 @@
 #include <list>
 using namespace std;
 
+// STRUCT DO FILME
 struct filme {
     int inicio;
     int fim;
     int categoria;
 };
 
-
+// FUNCAO DE ORDENACAO CRESCENTE DO FIM DOS FILMES
 bool my_compare(filme a, filme b) {
     if (a.fim != b.fim) {
         return a.fim < b.fim; // se a.fim < b.fim, então retorna true
@@ -18,25 +19,27 @@ bool my_compare(filme a, filme b) {
         return a.inicio < b.inicio; // se a.inicio < b.inicio, então retorna true
     }
 }
-/* 
-bool my_compare(filme a, filme b) {
-    return a.fim < b.fim; // se a.fim < b.fim, então retorna true
-}
- */
 
 int main() {
-    int n; // numero de filmes
-    int m; // numero de categorias
-    cin >> n >> m;
 
-    vector<filme> filmes(n);
-    vector<int> max_filmes(m); // numero max de filmes por categoria
+    // DECLARAÇÃO DE VARIAVEIS E VETORES
+    int n; // Numero de filmes
+    int m; // Numero de categorias totais
+    cin >> n >> m; // Input das variáveis acima
 
+    int maratona = 0; // Posição em que a maratona se encontra
+    vector<filme> filmes(n); // Vetor dos filmes dados pelo input
+    vector<int> max_filmes(m); // Máximo de filmes por categoria
+    vector<int> cntCat(m, 0); // Armazena o número de filmes assistidos em cada categoria, sendo m o tamanho do vetor e o valor inicial de cada elemento é zero
+    vector<filme> selected; // Lista dos filmes selecionados para a maratona
+    vector<int> duracao(n); // Duracão de cada filme
+
+    // INPUT DO MÁXIMO DE FILMES POR CATEGORIA
     for (int i = 0; i < m; i++) {
         cin >> max_filmes[i];
     }
 
-
+    // INPUTS DOS FILMES 
     for (int i = 0; i < n; i++) {
         cin >> filmes[i].inicio >> filmes[i].fim >> filmes[i].categoria;
     }
@@ -44,67 +47,50 @@ int main() {
     // ORDENAÇÃO CRESCENTE DO HORARIO DE TERMINO DOS FILMES 
     sort(filmes.begin(), filmes.end(), my_compare);
 
-
-    vector<int> cntCat(m, 0); // armazena o número de filmes assistidos em cada categoria, sendo m o tamanho do vetor e o valor inicial de cada elemento é zero
-    vector<filme> selected; // lista dos filmes selecionados
-
-    //list<filme> selected;
-
-    vector<int> duracao(n);
-    //vector<int> maratona(23);
-    int dia = 23;
-    int maratonaPoint;
-    int maratona = 0;
-
+    // PERCORRENDO TODOS OS FILMES
     for (int i = 0; i < n; i++) {
-        duracao[i] = filmes[i].fim - filmes[i].inicio;
+        duracao[i] = filmes[i].fim - filmes[i].inicio; // Duracao de cada filme
 
+        // FILTRO DE FILMES SE COMEÇAREM A NOITE E TERMINAR DE MADRUGADA NO PROX DIA
         if (filmes[i].fim - filmes[i].inicio < 0) {
             continue;
         }
 
-        // Verifica se os filmes selecionadps não ultrapassam o máximo por categoria
+        // FILTRO SE FILME SELECIONADO NÃO ULTRAPASSA O MAX POR CATEGORIA
         if (cntCat[filmes[i].categoria-1] >= max_filmes[filmes[i].categoria-1]) {
             continue;
         }
 
+        // FILTRO SE FILME NÃO COMEÇA E TERMINA NO MESMO HORÁRIO
         if (duracao[i] == 0) {
             continue;
         }
 
-      //cout << "catQuant: " << cntCat[filmes[i].categoria-1] << " " << "maxPorCat: " << max_filmes[filmes[i].categoria-1] << endl;
-
-      
-      //cout << "Inicio filme: " << filmes[i].inicio << endl;
-      //cout << "Fim filme: " << filmes[i].fim << endl;
-      //cout << "Duracao: " << duracao[i] << endl;
-
-      //cout << "Maratona: " << maratona << endl;
-
+        // SE O FILME PODE ENTRAR NA MARATONA
         if (filmes[i].inicio >= maratona) {
-            cntCat[filmes[i].categoria-1]++;
-            maratona = filmes[i].fim;
-            selected.push_back(filmes[i]);
+            cntCat[filmes[i].categoria-1]++; // Aumenta a quantidade de filmes em cada categoria
+            maratona = filmes[i].fim; // Atualiza a variavel de maratona para a próxima seleção
+            selected.push_back(filmes[i]); // Adiona o filme dos selecionados para a maratona
         }
     
 
     }
-    // -------- OUTPUT --------
-    //cout << "Maratona2: " << maratona << endl;
-    
-    selected.reserve(selected.size());
-    cout << "Máximo de filmes que pode ser assistidos: " << selected.size() << endl;
+    // -------- OUTPUT --------    
+    // FILMES DA MARATONA
+    cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
 
-    // filmes selecionados para assistir
+    cout << "----------" << endl;
+
+    // FILMES SELECIONADOS PARA ASSISTIR
+    cout << "Filmes da maratona: " << endl;
     for (int s = 0; s < selected.size(); s++) {
       cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
     } 
-
 
   return 0;
 }
 
 
-// CMD:
+// PARA RODAR NO CMD:
 // g++ -o gulosa heuristicaGulosa.cpp
 // ./gulosa < "input.txt"
