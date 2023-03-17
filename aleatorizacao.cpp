@@ -6,12 +6,14 @@
 #include<algorithm>
 using namespace std;
 
+// STRUCT DO FILME
 struct filme {
     int inicio;
     int fim;
     int categoria;
 };
 
+// FUNCAO DE ORDENACAO CRESCENTE DO FIM DOS FILMES
 bool my_compare(filme a, filme b) {
     if (a.fim != b.fim) {
         return a.fim < b.fim; // se a.fim < b.fim, então retorna true
@@ -21,46 +23,56 @@ bool my_compare(filme a, filme b) {
 }
 
 int main() {
+    // GERADOR DE NÚMERO ALEATÓRIO ENTRE 0.0 E 1.0
     default_random_engine generator;
     generator.seed(10);
     uniform_real_distribution<double> distribution(0.0,1.0);
 
-    int n;
-    int m;
-    cin >> n >> m;
+    // DECLARAÇÃO DE VARIAVEIS E VETORES
+    int n; // Numero de filmes
+    int m; // Numero de categorias totais
+    cin >> n >> m; // Input das variáveis acima
 
-    vector<filme> filmes(n);
-    vector<int> max_filmes(m);
+    vector<filme> filmes(n); // Vetor dos filmes dados pelo input
+    vector<int> max_filmes(m); // Máximo de filmes por categoria
+    int i = 0;  // Usado para percorrer os filmes do vetor "filmes"
+    vector<int> cntCat(m, 0); // Armazena o número de filmes assistidos em cada categoria, sendo m o tamanho do vetor e o valor inicial de cada elemento é zero
+    vector<filme> selected; // Lista dos filmes selecionados para a maratona
+    vector<int> maratona(23, 0);  // Relacionado à maratona inicializa todos os valores com zero. Muda para 1 se o tempo estiver ocupado
 
+
+    // INPUT DO MÁXIMO DE FILMES POR CATEGORIA
     for (int i = 0; i < m; i++) {
         cin >> max_filmes[i];
     }
 
+    // INPUTS DOS FILMES 
     for(int i = 0 ; i < n; i++){
         cin >> filmes[i].inicio >> filmes[i].fim >> filmes[i].categoria;
       }
-    
 
-    cout << "Filmes size: " << filmes.size() << endl;
-
-    int i = 0;  // usado para percorrer os filmes do vetor "filmes"
-    vector<int> cntCat(m, 0); // armazena o número de filmes assistidos em cada categoria, sendo m o tamanho do vetor e o valor inicial de cada elemento é zero
-    vector<filme> selected; // lista dos filmes selecionados
-    vector<int> maratona(23, 0);  // inicializa todos os vetores com zero. Muda para 1 se o tempo estiver ocupado
-
-    uniform_int_distribution<int> distribution(i,n);
+    // ANALISE ALEATORIA DE FILME QUE CAIBA NA MARATONA
     for(auto& el: filmes){
         if (distribution(generator) > 0.75 and i < n){ // 25% de chance de pegar outro filme qualquer que respeite o horário.
-            int p = distribution(generator);
+            uniform_int_distribution<int> distributionFilmes(i,n); // numero aleatorio para escolher um filme
+            int p = distributionFilmes(generator);
+
+            // FILTRO DE FILMES SE COMEÇAREM A NOITE E TERMINAR DE MADRUGADA NO PROX DIA
             if (filmes[p].fim - filmes[p].inicio < 0) {
                 continue;
             }
+
+            // FILTRO SE FILME SELECIONADO NÃO ULTRAPASSA O MAX POR CATEGORIA
             if (cntCat[filmes[p].categoria-1] >= max_filmes[filmes[p].categoria-1]) {
                 continue;
             }
+
+            // FILTRO SE FILME NÃO COMEÇA E TERMINA NO MESMO HORÁRIO
             if ((filmes[p].fim - filmes[p].inicio) == 0) {
                 continue;
             }
+
+            // SE O FILME DEVE ENTRAR NA MARATONA
             bool disponivel = true;
             for (int m = filmes[p].inicio; m <= filmes[p].fim; m++) {      
                 if (maratona[m] == 1) {
@@ -81,16 +93,24 @@ int main() {
         i=i+1;
     }
 
+    // ANALISANDO O RESTO DE FILMES NÃO ANALISADOS ANTERIORMENTE
     for(auto& el: filmes){
+        // FILTRO DE FILMES SE COMEÇAREM A NOITE E TERMINAR DE MADRUGADA NO PROX DIA
         if (el.fim - el.inicio < 0) {
             continue;
         }
+
+        // FILTRO SE FILME SELECIONADO NÃO ULTRAPASSA O MAX POR CATEGORIA
         if (cntCat[el.categoria-1] >= max_filmes[el.categoria-1]) {
             continue;
         }
+
+        // FILTRO SE FILME NÃO COMEÇA E TERMINA NO MESMO HORÁRIO
         if ((el.fim - el.inicio) == 0) {
             continue;
         }
+
+        // SE O FILME DEVE ENTRAR NA MARATONA
         bool disponivel = true;
         for (int m = el.inicio; m <= el.fim; m++) {      
             if (maratona[m] == 1) {
@@ -107,20 +127,23 @@ int main() {
         }
     }
 
-    // ordenando para imprimir
+    // -------- OUTPUT --------  
+    // ORDENANDO PARA IMPRIMIR
     sort(selected.begin(),selected.end(), my_compare);  
 
-    selected.reserve(selected.size());
-
+    // ESTADO FINAL DA MARATONA
     cout << "Maratona: ";
     for (int m = 0; m < maratona.size(); m++) {
         cout << maratona[m];
     }
     cout << endl;
 
-    cout << "Máximo de filmes que pode ser assistidos: " << selected.size() << endl;
+    // FILMES DA MARATONA
+    cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
 
-    // filmes selecionados para assistir
+    cout << "----------" << endl;
+    // FILMES SELECIONADOS PARA ASSISTIR
+    cout << "Filmes da maratona: " << endl;
     for (int s = 0; s < selected.size(); s++) {
       cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
     }    
@@ -128,4 +151,6 @@ int main() {
     return 0;
   }
 
+// PARA RODAR NO CMD:
 // g++ -o aleatorizacao aleatorizacao.cpp
+// ./aleatorizacao < "input.txt"
