@@ -83,7 +83,6 @@ int main() {
 
         if (filmes[i].inicio >= maratona) {
             cntCat[filmes[i].categoria-1]++;
-            //maratona += duracao[i];
             maratona = filmes[i].fim;
             selected.push_back(filmes[i]);
         }
