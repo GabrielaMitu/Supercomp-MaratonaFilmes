@@ -16,9 +16,9 @@ struct filme {
 // FUNCAO DE ORDENACAO CRESCENTE DO FIM DOS FILMES
 bool my_compare(filme a, filme b) {
     if (a.fim != b.fim) {
-        return a.fim < b.fim; // se a.fim < b.fim, então retorna true
+        return a.fim < b.fim;
     } else {
-        return a.inicio < b.inicio; // se a.inicio < b.inicio, então retorna true
+        return a.inicio < b.inicio;
     }
 }
 
@@ -52,7 +52,8 @@ int main() {
       }
 
     // ANALISE ALEATORIA DE FILME QUE CAIBA NA MARATONA
-    for(auto& el: filmes){
+    auto filmeP = filmes.begin(); // filmeP percorre todos os filmes
+    while (filmeP != filmes.end()) {
         if (distribution(generator) > 0.75 and i < n){ // 25% de chance de pegar outro filme qualquer que respeite o horário.
             uniform_int_distribution<int> distributionFilmes(i,n); // numero aleatorio para escolher um filme
             int p = distributionFilmes(generator);
@@ -91,6 +92,7 @@ int main() {
             }
         }
         i=i+1;
+        filmeP++;
     }
 
     // ANALISANDO O RESTO DE FILMES NÃO ANALISADOS ANTERIORMENTE
@@ -127,13 +129,13 @@ int main() {
         }
     }
 
-    // -------- OUTPUT --------  
+    // -------- OUTPUT (TIRAR PARA A ANALISE NO VALGRIND) --------  
     // ORDENANDO PARA IMPRIMIR
     sort(selected.begin(),selected.end(), my_compare);  
 
     // ESTADO FINAL DA MARATONA
     cout << "Maratona: ";
-    for (int m = 0; m < maratona.size(); m++) {
+    for (int m = 0; m < static_cast<int>(maratona.size()); m++) {
         cout << maratona[m];
     }
     cout << endl;
@@ -144,7 +146,7 @@ int main() {
     cout << "----------" << endl;
     // FILMES SELECIONADOS PARA ASSISTIR
     cout << "Filmes da maratona: " << endl;
-    for (int s = 0; s < selected.size(); s++) {
+    for (int s = 0; s < static_cast<int>(selected.size()); s++) {
       cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
     }    
     
