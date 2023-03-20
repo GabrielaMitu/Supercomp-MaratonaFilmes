@@ -14,9 +14,9 @@ struct filme {
 // FUNCAO DE ORDENACAO CRESCENTE DO FIM DOS FILMES
 bool my_compare(filme a, filme b) {
     if (a.fim != b.fim) {
-        return a.fim < b.fim; // se a.fim < b.fim, então retorna true
+        return a.fim < b.fim;
     } else {
-        return a.inicio < b.inicio; // se a.inicio < b.inicio, então retorna true
+        return a.inicio < b.inicio;
     }
 }
 
@@ -75,9 +75,9 @@ int main() {
     
 
     }
-    // -------- OUTPUT --------    
+    // -------- OUTPUT (TIRAR PARA A ANALISE NO VALGRIND) --------    
     // FILMES DA MARATONA
-    cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
+/*     cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
 
     cout << "----------" << endl;
 
@@ -85,7 +85,7 @@ int main() {
     cout << "Filmes da maratona: " << endl;
     for (int s = 0; s < selected.size(); s++) {
       cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
-    } 
+    }  */
 
   return 0;
 }
@@ -94,3 +94,8 @@ int main() {
 // PARA RODAR NO CMD:
 // g++ -o gulosa heuristicaGulosa.cpp
 // ./gulosa < "input.txt"
+
+// PARA RODAR PARA ANALISAR COM VALGRIND:
+// g++ -Wall -O3 -g heuristicaGulosa.cpp -o gulosa
+// valgrind --tool=callgrind ./gulosa < input.txt
+// callgrind_annotate callgrind.out.6978 heuristicaGulosa.cpp > gulosaValgrindInput.txt
