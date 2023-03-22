@@ -1,12 +1,12 @@
 --------------------------------------------------------------------------------
-Profile data file 'callgrind.out.6967' (creator: callgrind-3.18.1)
+Profile data file 'callgrind.out.5965' (creator: callgrind-3.18.1)
 --------------------------------------------------------------------------------
 I1 cache: 
 D1 cache: 
 LL cache: 
-Timerange: Basic block 0 - 454198
+Timerange: Basic block 0 - 445759
 Trigger: Program termination
-Profiled target:  ./aleatorizacao (PID 6967, part 1)
+Profiled target:  ./aleatorizacao (PID 5965, part 1)
 Events recorded:  Ir
 Events shown:     Ir
 Event sort order: Ir
@@ -18,88 +18,78 @@ Auto-annotation:  on
 --------------------------------------------------------------------------------
 Ir                 
 --------------------------------------------------------------------------------
-2,721,851 (100.0%)  PROGRAM TOTALS
+2,675,378 (100.0%)  PROGRAM TOTALS
 
 --------------------------------------------------------------------------------
 Ir                file:function
 --------------------------------------------------------------------------------
-984,242 (36.16%)  ./elf/./elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-569,689 (20.93%)  ./elf/./elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-260,178 ( 9.56%)  ./elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
-118,962 ( 4.37%)  ./elf/./elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-108,434 ( 3.98%)  ./elf/./elf/do-rel.h:_dl_relocate_object
- 73,683 ( 2.71%)  ./string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
- 71,993 ( 2.65%)  ???:std::istreambuf_iterator<char, std::char_traits<char> > std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::_M_extract_int<long>(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, long&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
- 53,444 ( 1.96%)  ./libio/./libio/getc.c:getc [/usr/lib/x86_64-linux-gnu/libc.so.6]
- 39,520 ( 1.45%)  ./libio/./libio/genops.c:_IO_sputbackc [/usr/lib/x86_64-linux-gnu/libc.so.6]
- 37,440 ( 1.38%)  ./libio/./libio/ioungetc.c:ungetc [/usr/lib/x86_64-linux-gnu/libc.so.6]
- 28,407 ( 1.04%)  ./elf/./elf/dl-tunables.c:__GI___tunables_init [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
- 25,788 ( 0.95%)  ???:std::istream::sentry::sentry(std::istream&, bool) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
- 19,806 ( 0.73%)  ./elf/../sysdeps/generic/dl-protected.h:do_lookup_x
- 18,720 ( 0.69%)  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
- 16,578 ( 0.61%)  ???:std::istream::operator>>(int&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
- 12,246 ( 0.45%)  ???:std::ostream::flush() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+978,906 (36.59%)  ./elf/./elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+565,459 (21.14%)  ./elf/./elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+259,519 ( 9.70%)  ./elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+118,070 ( 4.41%)  ./elf/./elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+108,205 ( 4.04%)  ./elf/./elf/do-rel.h:_dl_relocate_object
+ 72,457 ( 2.71%)  ./string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 71,993 ( 2.69%)  ???:std::istreambuf_iterator<char, std::char_traits<char> > std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::_M_extract_int<long>(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, long&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+ 53,444 ( 2.00%)  ./libio/./libio/getc.c:getc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 39,520 ( 1.48%)  ./libio/./libio/genops.c:_IO_sputbackc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 37,440 ( 1.40%)  ./libio/./libio/ioungetc.c:ungetc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 28,407 ( 1.06%)  ./elf/./elf/dl-tunables.c:__GI___tunables_init [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 25,788 ( 0.96%)  ???:std::istream::sentry::sentry(std::istream&, bool) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+ 19,671 ( 0.74%)  ./elf/../sysdeps/generic/dl-protected.h:do_lookup_x
+ 18,720 ( 0.70%)  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+ 16,578 ( 0.62%)  ???:std::istream::operator>>(int&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
  12,128 ( 0.45%)  ???:std::locale::_Impl::_M_install_facet(std::locale::id const*, std::locale::facet const*) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
- 11,991 ( 0.44%)  ./elf/./elf/dl-version.c:_dl_check_map_versions [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
- 11,973 ( 0.44%)  ???:0x000000000012f9e0 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
- 10,945 ( 0.40%)  ./elf/../sysdeps/generic/ldsodefs.h:do_lookup_x
+ 11,973 ( 0.45%)  ???:0x000000000012f9e0 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+ 11,790 ( 0.44%)  ???:std::ostream::flush() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+ 11,649 ( 0.44%)  ./elf/./elf/dl-version.c:_dl_check_map_versions [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 10,870 ( 0.41%)  ./elf/../sysdeps/generic/ldsodefs.h:do_lookup_x
  10,240 ( 0.38%)  ./wcsmbs/./wcsmbs/btowc.c:btowc [/usr/lib/x86_64-linux-gnu/libc.so.6]
- 10,173 ( 0.37%)  ./elf/../sysdeps/generic/ldsodefs.h:_dl_relocate_object
-  9,870 ( 0.36%)  ./libio/./libio/iofflush.c:fflush [/usr/lib/x86_64-linux-gnu/libc.so.6]
-  9,253 ( 0.34%)  ???:std::ostream::sentry::sentry(std::ostream&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-  8,464 ( 0.31%)  ./elf/./elf/dl-runtime.c:_dl_fixup [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  7,455 ( 0.27%)  ???:0x000000000012b140 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-  5,966 ( 0.22%)  ./libio/./libio/fileops.c:_IO_file_sync@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc.so.6]
-  5,922 ( 0.22%)  ./libio/./libio/libioP.h:fflush
+ 10,149 ( 0.38%)  ./elf/../sysdeps/generic/ldsodefs.h:_dl_relocate_object
+  9,510 ( 0.36%)  ./libio/./libio/iofflush.c:fflush [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  7,804 ( 0.29%)  ./elf/./elf/dl-runtime.c:_dl_fixup [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+  7,137 ( 0.27%)  ???:std::ostream::sentry::sentry(std::ostream&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+  6,447 ( 0.24%)  ???:0x000000000012b140 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
   5,864 ( 0.22%)  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::uflow() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+  5,732 ( 0.21%)  ./libio/./libio/fileops.c:_IO_file_sync@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  5,706 ( 0.21%)  ./libio/./libio/libioP.h:fflush
   5,631 ( 0.21%)  ???:0x00000000048f4420 [???]
-  5,526 ( 0.20%)  ???:0x00000000001032d0 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-  4,540 ( 0.17%)  aleatorizacao.cpp:main [/home/gabimitu/Supercomp/Supercomp-MaratonaFilmes/aleatorizacao]
-  4,383 ( 0.16%)  ???:std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-  4,165 ( 0.15%)  ???:0x00000000048f1a20 [???]
-  4,164 ( 0.15%)  ./elf/./elf/dl-reloc.c:_dl_relocate_object [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  3,955 ( 0.15%)  ./libio/./libio/fileops.c:_IO_file_xsputn@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  5,526 ( 0.21%)  ???:0x00000000001032d0 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+  4,314 ( 0.16%)  aleatorizacao.cpp:main [/home/gabimitu/Supercomp/Supercomp-MaratonaFilmes/aleatorizacao]
+  4,165 ( 0.16%)  ???:0x00000000048f1a20 [???]
+  4,164 ( 0.16%)  ./elf/./elf/dl-reloc.c:_dl_relocate_object [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
   3,782 ( 0.14%)  ./elf/./elf/dl-load.c:_dl_map_object_from_fd [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  3,690 ( 0.14%)  ./elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_xsave [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  3,671 ( 0.13%)  ./libio/./libio/iofwrite.c:fwrite [/usr/lib/x86_64-linux-gnu/libc.so.6]
   3,456 ( 0.13%)  ./wcsmbs/./wcsmbs/wctob.c:wctob [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  3,403 ( 0.13%)  ./elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_xsave [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
   3,334 ( 0.12%)  ./elf/./elf/dl-cache.c:_dl_cache_libcmp [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  3,222 ( 0.12%)  ???:std::locale::id::_M_id() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-  3,085 ( 0.11%)  ./elf/../sysdeps/x86/dl-cacheinfo.h:intel_check_word.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  2,848 ( 0.10%)  ./elf/./elf/dl-misc.c:_dl_name_match_p [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  2,814 ( 0.10%)  /usr/include/c++/11/bits/random.h:main
+  3,085 ( 0.12%)  ./elf/../sysdeps/x86/dl-cacheinfo.h:intel_check_word.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+  2,934 ( 0.11%)  ???:std::locale::id::_M_id() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+  2,848 ( 0.11%)  ./elf/./elf/dl-misc.c:_dl_name_match_p [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+  2,814 ( 0.11%)  /usr/include/c++/11/bits/random.h:main
   2,733 ( 0.10%)  ???:std::ctype<wchar_t>::_M_initialize_ctype() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-  2,697 ( 0.10%)  ???:std::ostream& std::ostream::_M_insert<long>(long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
   2,640 ( 0.10%)  ???:__dynamic_cast [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
   2,377 ( 0.09%)  ./elf/./elf/dl-tunables.h:__GI___tunables_init
   2,243 ( 0.08%)  ./elf/./elf/dl-load.c:_dl_map_object [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
   2,226 ( 0.08%)  ./elf/./elf/dl-deps.c:_dl_map_object_deps [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
   2,222 ( 0.08%)  ./elf/../bits/stdlib-bsearch.h:intel_check_word.constprop.0
-  1,698 ( 0.06%)  ./malloc/./malloc/malloc.c:_int_malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
   1,553 ( 0.06%)  /usr/include/c++/11/bits/random.tcc:main
+  1,552 ( 0.06%)  ./malloc/./malloc/malloc.c:_int_malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
   1,513 ( 0.06%)  ./elf/./elf/dl-load.c:open_verify.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  1,492 ( 0.05%)  ./elf/./elf/get-dynamic-info.h:_dl_map_object_from_fd
-  1,480 ( 0.05%)  ???:__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+  1,492 ( 0.06%)  ./elf/./elf/get-dynamic-info.h:_dl_map_object_from_fd
+  1,480 ( 0.06%)  ???:__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
   1,308 ( 0.05%)  ./elf/./elf/rtld.c:dl_main [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
   1,266 ( 0.05%)  ./elf/./elf/dl-load.c:open_path [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  1,264 ( 0.05%)  ???:0x000000000012e7e0 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
   1,234 ( 0.05%)  ./elf/./elf/dl-cache.c:_dl_load_cache_lookup [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  1,210 ( 0.04%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:__mempcpy_avx_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc.so.6]
-  1,156 ( 0.04%)  ./libio/./libio/libioP.h:fwrite
   1,129 ( 0.04%)  ./elf/./elf/dl-object.c:_dl_new_object [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  1,120 ( 0.04%)  ???:std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
   1,115 ( 0.04%)  ./elf/./elf/dl-minimal-malloc.c:__minimal_malloc [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-  1,095 ( 0.04%)  ./string/../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:__memcmp_avx2_movbe [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  1,048 ( 0.04%)  ./string/../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:__memcmp_avx2_movbe [/usr/lib/x86_64-linux-gnu/libc.so.6]
   1,036 ( 0.04%)  ./wctype/./wctype/wctype_l.c:wctype_l [/usr/lib/x86_64-linux-gnu/libc.so.6]
-    972 ( 0.04%)  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::sync() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-    952 ( 0.03%)  ./string/../sysdeps/x86_64/multiarch/strlen-avx2.S:__strlen_avx2 [/usr/lib/x86_64-linux-gnu/libc.so.6]
-    935 ( 0.03%)  ???:0x00000000048f16d0 [???]
+    952 ( 0.04%)  ./string/../sysdeps/x86_64/multiarch/strlen-avx2.S:__strlen_avx2 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    936 ( 0.03%)  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::sync() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
     896 ( 0.03%)  ./wcsmbs/./wcsmbsload.h:btowc
-    884 ( 0.03%)  ./libio/./libio/fileops.c:_IO_file_overflow@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc.so.6]
     883 ( 0.03%)  ./elf/../sysdeps/x86_64/dl-machine.h:_dl_start
+    839 ( 0.03%)  ???:0x00000000048f16d0 [???]
     816 ( 0.03%)  ./string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:memset [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
     815 ( 0.03%)  ./elf/./elf/do-rel.h:_dl_start
-    809 ( 0.03%)  ???:0x00000000048f4220 [???]
     797 ( 0.03%)  ./string/../sysdeps/x86_64/multiarch/strlen-vec.S:strlen [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
     776 ( 0.03%)  ./malloc/./malloc/malloc.c:ptmalloc_init.part.0
     774 ( 0.03%)  ./elf/../sysdeps/nptl/dl-tls_init_tp.c:rtld_mutex_dummy [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
@@ -108,67 +98,48 @@ Ir                file:function
     768 ( 0.03%)  ./iconv/./iconv/gconv_simple.c:__gconv_btwoc_ascii [/usr/lib/x86_64-linux-gnu/libc.so.6]
     760 ( 0.03%)  /usr/include/c++/11/bits/uniform_int_dist.h:int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0] [/home/gabimitu/Supercomp/Supercomp-MaratonaFilmes/aleatorizacao]
     744 ( 0.03%)  ./string/../sysdeps/x86_64/multiarch/../strchr.S:index [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-    741 ( 0.03%)  /usr/include/c++/11/bits/stl_algobase.h:main
     740 ( 0.03%)  ./elf/./elf/dl-tunables.c:__tunable_get_val [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-    732 ( 0.03%)  ???:std::ctype<char>::_M_widen_init() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
+    730 ( 0.03%)  /usr/include/c++/11/bits/stl_algobase.h:main
     715 ( 0.03%)  ./elf/./dl-map-segments.h:_dl_map_object_from_fd
     705 ( 0.03%)  ./stdlib/./stdlib/cxa_finalize.c:__cxa_finalize [/usr/lib/x86_64-linux-gnu/libc.so.6]
     666 ( 0.02%)  ???:std::locale::_Impl::_Impl(unsigned long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-    663 ( 0.02%)  ???:0x00000000048f4360 [???]
-    653 ( 0.02%)  ./libio/./libio/fileops.c:_IO_do_write@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    639 ( 0.02%)  ???:0x00000000048f4360 [???]
     629 ( 0.02%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:mempcpy [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
     625 ( 0.02%)  ???:0x00000000048f2790 [???]
+    625 ( 0.02%)  ???:0x00000000048f4220 [???]
     619 ( 0.02%)  ???:0x00000000048f2160 [???]
     619 ( 0.02%)  ???:0x00000000048f39c0 [???]
-    614 ( 0.02%)  ???:0x0000000000109190 [???]
+    614 ( 0.02%)  ???:0x0000000000109110 [???]
     614 ( 0.02%)  ???:std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, long&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
     596 ( 0.02%)  ./elf/../sysdeps/x86/dl-cacheinfo.h:handle_intel.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-    594 ( 0.02%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:memcpy [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
     584 ( 0.02%)  ???:__cxxabiv1::__vmi_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
     555 ( 0.02%)  ./malloc/./malloc/malloc.c:_int_free [/usr/lib/x86_64-linux-gnu/libc.so.6]
     530 ( 0.02%)  ./elf/./elf/dl-sort-maps.c:dfs_traversal.part.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+    523 ( 0.02%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:memcpy [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
     517 ( 0.02%)  ???:0x00000000048f3a90 [???]
-    517 ( 0.02%)  ???:std::ostream::operator<<(int) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
     507 ( 0.02%)  ./elf/../elf/dl-sysdep.c:_dl_sysdep_start [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-    504 ( 0.02%)  ???:std::ostream::put(char) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
     502 ( 0.02%)  ./elf/../sysdeps/x86/dl-prop.h:_dl_map_object_from_fd
-    479 ( 0.02%)  ./malloc/./malloc/malloc.c:malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
     464 ( 0.02%)  ???:std::ios_base::ios_base() [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-    444 ( 0.02%)  ./libio/./libio/fileops.c:_IO_file_write@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc.so.6]
     437 ( 0.02%)  ./elf/./elf/dl-hwcaps_split.c:_dl_hwcaps_split_masked [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
     436 ( 0.02%)  ./elf/./dl-find_object.h:_dl_find_object_from_map [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+    435 ( 0.02%)  ./malloc/./malloc/malloc.c:malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
     429 ( 0.02%)  ./stdlib/./stdlib/cxa_atexit.c:__cxa_atexit [/usr/lib/x86_64-linux-gnu/libc.so.6]
     420 ( 0.02%)  ./elf/./elf/dl-error-skeleton.c:_dl_catch_exception [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
     415 ( 0.02%)  ./elf/./elf/dl-environ.c:_dl_next_ld_env_entry [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-    414 ( 0.02%)  ./elf/./elf/dl-fini.c:_dl_fini [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-    414 ( 0.02%)  ???:std::__cxx11::numpunct<char>::_M_initialize_numpunct(__locale_struct*) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-    414 ( 0.02%)  ???:std::numpunct<char>::_M_initialize_numpunct(__locale_struct*) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-    413 ( 0.02%)  ./elf/./elf/dl-init.c:call_init.part.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-    408 ( 0.01%)  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::xsputn(char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30]
-    400 ( 0.01%)  ./io/../sysdeps/unix/sysv/linux/open64_nocancel.c:__open_nocancel [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
-    392 ( 0.01%)  ./stdlib/./stdlib/cxa_atexit.c:__new_exitfn [/usr/lib/x86_64-linux-gnu/libc.so.6]
 
 --------------------------------------------------------------------------------
 -- User-annotated source: aleatorizacao.cpp
 --------------------------------------------------------------------------------
 Ir           
 
--- line 9 ----------------------------------------
-  .           // STRUCT DO FILME
-  .           struct filme {
-  .               int inicio;
-  .               int fim;
-  .               int categoria;
-  .           };
-  .           
-  .           // FUNCAO DE ORDENACAO CRESCENTE DO FIM DOS FILMES
-192 ( 0.01%)  bool my_compare(filme a, filme b) {
- 48 ( 0.00%)      if (a.fim != b.fim) {
+-- line 17 ----------------------------------------
+  .           bool my_compare(filme a, filme b) {
+  .               if (a.fim != b.fim) {
   .                   return a.fim < b.fim;
   .               } else {
- 24 ( 0.00%)          return a.inicio < b.inicio;
+  .                   return a.inicio < b.inicio;
   .               }
- 24 ( 0.00%)  }
+  .           }
   .           
  11 ( 0.00%)  int main() {
   .               // GERADOR DE NÚMERO ALEATÓRIO ENTRE 0.0 E 1.0
@@ -180,7 +151,7 @@ Ir
   .               int n; // Numero de filmes
   .               int m; // Numero de categorias totais
   7 ( 0.00%)      cin >> n >> m; // Input das variáveis acima
-8,989 ( 0.33%)  => ???:0x0000000000109190 (2x)
+8,989 ( 0.34%)  => ???:0x0000000000109110 (2x)
   .           
   1 ( 0.00%)      vector<filme> filmes(n); // Vetor dos filmes dados pelo input
   2 ( 0.00%)      vector<int> max_filmes(m); // Máximo de filmes por categoria
@@ -193,15 +164,15 @@ Ir
   .           
   .           
   .               // INPUT DO MÁXIMO DE FILMES POR CATEGORIA
- 25 ( 0.00%)      for (int i = 0; i < m; i++) {
+ 26 ( 0.00%)      for (int i = 0; i < m; i++) {
  15 ( 0.00%)          cin >> max_filmes[i];
-5,240 ( 0.19%)  => ???:0x0000000000109190 (5x)
+5,240 ( 0.20%)  => ???:0x0000000000109110 (5x)
   .               }
   .           
   .               // INPUTS DOS FILMES 
-406 ( 0.01%)      for(int i = 0 ; i < n; i++){
+406 ( 0.02%)      for(int i = 0 ; i < n; i++){
 900 ( 0.03%)          cin >> filmes[i].inicio >> filmes[i].fim >> filmes[i].categoria;
-342,061 (12.57%)  => ???:0x0000000000109190 (300x)
+342,061 (12.79%)  => ???:0x0000000000109110 (300x)
   .                 }
   .           
   .               // ANALISE ALEATORIA DE FILME QUE CAIBA NA MARATONA
@@ -217,7 +188,7 @@ Ir
   .                       }
   .           
   .                       // FILTRO SE FILME SELECIONADO NÃO ULTRAPASSA O MAX POR CATEGORIA
- 60 ( 0.00%)              if (cntCat[filmes[p].categoria-1] >= max_filmes[filmes[p].categoria-1]) {
+ 80 ( 0.00%)              if (cntCat[filmes[p].categoria-1] >= max_filmes[filmes[p].categoria-1]) {
   .                           continue;
   .                       }
   .           
@@ -228,18 +199,18 @@ Ir
   .           
   .                       // SE O FILME DEVE ENTRAR NA MARATONA
   .                       bool disponivel = true;
- 86 ( 0.00%)              for (int m = filmes[p].inicio; m <= filmes[p].fim; m++) {      
+ 93 ( 0.00%)              for (int m = filmes[p].inicio; m <= filmes[p].fim; m++) {      
  58 ( 0.00%)                  if (maratona[m] == 1) {
   .                               disponivel = false;
   .                               break;
   .                           }
   .                       }
   .                       if (disponivel) {
- 57 ( 0.00%)                  for (int m = filmes[p].inicio; m <= filmes[p].fim; m++) {
+ 64 ( 0.00%)                  for (int m = filmes[p].inicio; m <= filmes[p].fim; m++) {
  19 ( 0.00%)                      maratona[m] = 1;
   .                           }
- 35 ( 0.00%)                  cntCat[filmes[p].categoria-1]++;
- 21 ( 0.00%)                  selected.push_back(filmes[p]);
+ 49 ( 0.00%)                  cntCat[filmes[p].categoria-1]++;
+ 14 ( 0.00%)                  selected.push_back(filmes[p]);
 2,955 ( 0.11%)  => /usr/include/c++/11/bits/stl_vector.h:std::vector<filme, std::allocator<filme> >::push_back(filme const&) (7x)
   .                           filmes.erase(filmes.begin()+p);
  14 ( 0.00%)                  n=n-1;
@@ -286,153 +257,24 @@ Ir
   .           
   .               // -------- OUTPUT (TIRAR PARA A ANALISE NO VALGRIND) --------  
   .               // ORDENANDO PARA IMPRIMIR
-  .               sort(selected.begin(),selected.end(), my_compare);  
+  .           /*     sort(selected.begin(),selected.end(), my_compare);  
   .           
   .               // ESTADO FINAL DA MARATONA
-  .               cout << "Maratona: ";
- 75 ( 0.00%)      for (int m = 0; m < static_cast<int>(maratona.size()); m++) {
- 69 ( 0.00%)          cout << maratona[m];
-13,830 ( 0.51%)  => ???:0x0000000000109260 (23x)
-  .               }
-  .               cout << endl;
-  .           
-  .               // FILMES DA MARATONA
-  .               cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
-  .           
+-- line 136 ----------------------------------------
+-- line 146 ----------------------------------------
   .               cout << "----------" << endl;
   .               // FILMES SELECIONADOS PARA ASSISTIR
   .               cout << "Filmes da maratona: " << endl;
- 28 ( 0.00%)      for (int s = 0; s < static_cast<int>(selected.size()); s++) {
- 96 ( 0.00%)        cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
-9,771 ( 0.36%)  => ???:0x0000000000109260 (24x)
+  .               for (int s = 0; s < static_cast<int>(selected.size()); s++) {
+  .                 cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
   .               }    
-  .               
+  .                */
   .               return 0;
  15 ( 0.00%)    }
   .           
   .           // PARA RODAR NO CMD:
   .           // g++ -o aleatorizacao aleatorizacao.cpp
   .           // ./aleatorizacao < "input.txt"
---------------------------------------------------------------------------------
--- Auto-annotated source: /usr/include/c++/11/bits/stl_algobase.h
---------------------------------------------------------------------------------
-Ir           
-
--- line 421 ----------------------------------------
-  .           	{
-  .           #if __cplusplus >= 201103L
-  .           	  using __assignable = conditional<_IsMove,
-  .           					   is_move_assignable<_Tp>,
-  .           					   is_copy_assignable<_Tp>>;
-  .           	  // trivial types can have deleted assignment
-  .           	  static_assert( __assignable::type::value, "type is not assignable" );
-  .           #endif
- 10 ( 0.00%)  	  const ptrdiff_t _Num = __last - __first;
-  .           	  if (_Num)
- 10 ( 0.00%)  	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
-250 ( 0.01%)  => ???:0x0000000000109250 (5x)
-  .           	  return __result + _Num;
-  .           	}
-  .               };
-  .           
-  .           _GLIBCXX_BEGIN_NAMESPACE_CONTAINER
-  .           
-  .             template<typename _Tp, typename _Ref, typename _Ptr>
-  .               struct _Deque_iterator;
--- line 439 ----------------------------------------
--- line 733 ----------------------------------------
-  .           #if __cplusplus >= 201103L
-  .           	  using __assignable = conditional<_IsMove,
-  .           					   is_move_assignable<_Tp>,
-  .           					   is_copy_assignable<_Tp>>;
-  .           	  // trivial types can have deleted assignment
-  .           	  static_assert( __assignable::type::value, "type is not assignable" );
-  .           #endif
-  .           	  const ptrdiff_t _Num = __last - __first;
-  2 ( 0.00%)  	  if (_Num)
-  6 ( 0.00%)  	    __builtin_memmove(__result - _Num, __first, sizeof(_Tp) * _Num);
- 13 ( 0.00%)  => ???:0x0000000000109250 (1x)
-  .           	  return __result - _Num;
-  .           	}
-  .               };
-  .           
-  .             template<bool _IsMove, typename _BI1, typename _BI2>
-  .               _GLIBCXX20_CONSTEXPR
-  .               inline _BI2
-  .               __copy_move_backward_a2(_BI1 __first, _BI1 __last, _BI2 __result)
--- line 750 ----------------------------------------
--- line 903 ----------------------------------------
-  .           
-  .             template<typename _ForwardIterator, typename _Tp>
-  .               _GLIBCXX20_CONSTEXPR
-  .               inline typename
-  .               __gnu_cxx::__enable_if<!__is_scalar<_Tp>::__value, void>::__type
-  .               __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
-  .           	      const _Tp& __value)
-  .               {
-310 ( 0.01%)        for (; __first != __last; ++__first)
-396 ( 0.01%)  	*__first = __value;
-  .               }
-  .           
-  .             template<typename _ForwardIterator, typename _Tp>
-  .               _GLIBCXX20_CONSTEXPR
-  .               inline typename
-  .               __gnu_cxx::__enable_if<__is_scalar<_Tp>::__value, void>::__type
-  .               __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
-  .           	      const _Tp& __value)
-  .               {
-  2 ( 0.00%)        const _Tp __tmp = __value;
- 67 ( 0.00%)        for (; __first != __last; ++__first)
- 14 ( 0.00%)  	*__first = __tmp;
- 14 ( 0.00%)  => ???:0x0000000000109180 (1x)
-  .               }
-  .           
-  .             // Specialization: for char types we can use memset.
-  .             template<typename _Tp>
-  .               _GLIBCXX20_CONSTEXPR
-  .               inline typename
-  .               __gnu_cxx::__enable_if<__is_byte<_Tp>::__value, void>::__type
-  .               __fill_a1(_Tp* __first, _Tp* __last, const _Tp& __c)
--- line 932 ----------------------------------------
--- line 1107 ----------------------------------------
-  .               _GLIBCXX20_CONSTEXPR
-  .               inline _OutputIterator
-  .               __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value,
-  .           	       std::random_access_iterator_tag)
-  .               {
-  .           #if __cplusplus >= 201103L
-  .                 static_assert(is_integral<_Size>{}, "fill_n must pass integral size");
-  .           #endif
-  4 ( 0.00%)        if (__n <= 0)
-  .           	return __first;
-  .           
-  .                 __glibcxx_requires_can_increment(__first, __n);
-  .           
-  .                 std::__fill_a(__first, __first + __n, __value);
-  .                 return __first + __n;
-  .               }
-  .           
--- line 1123 ----------------------------------------
--- line 1507 ----------------------------------------
-  .             { return (int)sizeof(int) * __CHAR_BIT__  - 1 - __builtin_clz(__n); }
-  .           
-  .             inline _GLIBCXX_CONSTEXPR unsigned
-  .             __lg(unsigned __n)
-  .             { return (int)sizeof(int) * __CHAR_BIT__  - 1 - __builtin_clz(__n); }
-  .           
-  .             inline _GLIBCXX_CONSTEXPR long
-  .             __lg(long __n)
-  5 ( 0.00%)    { return (int)sizeof(long) * __CHAR_BIT__ - 1 - __builtin_clzl(__n); }
-  .           
-  .             inline _GLIBCXX_CONSTEXPR unsigned long
-  .             __lg(unsigned long __n)
-  .             { return (int)sizeof(long) * __CHAR_BIT__ - 1 - __builtin_clzl(__n); }
-  .           
-  .             inline _GLIBCXX_CONSTEXPR long long
-  .             __lg(long long __n)
-  .             { return (int)sizeof(long long) * __CHAR_BIT__ - 1 - __builtin_clzll(__n); }
--- line 1523 ----------------------------------------
-
 --------------------------------------------------------------------------------
 -- Auto-annotated source: /usr/include/c++/11/bits/random.tcc
 --------------------------------------------------------------------------------
@@ -545,6 +387,86 @@ Ir
     .           		   _UniformRandomNumberGenerator& __urng)
     .           	{ this->__generate(__f, __t, __urng, _M_param); }
 -- line 1878 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/11/bits/stl_algobase.h
+--------------------------------------------------------------------------------
+Ir           
+
+-- line 421 ----------------------------------------
+  .           	{
+  .           #if __cplusplus >= 201103L
+  .           	  using __assignable = conditional<_IsMove,
+  .           					   is_move_assignable<_Tp>,
+  .           					   is_copy_assignable<_Tp>>;
+  .           	  // trivial types can have deleted assignment
+  .           	  static_assert( __assignable::type::value, "type is not assignable" );
+  .           #endif
+ 10 ( 0.00%)  	  const ptrdiff_t _Num = __last - __first;
+  .           	  if (_Num)
+  5 ( 0.00%)  	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
+250 ( 0.01%)  => ???:0x0000000000109180 (5x)
+  .           	  return __result + _Num;
+  .           	}
+  .               };
+  .           
+  .           _GLIBCXX_BEGIN_NAMESPACE_CONTAINER
+  .           
+  .             template<typename _Tp, typename _Ref, typename _Ptr>
+  .               struct _Deque_iterator;
+-- line 439 ----------------------------------------
+-- line 903 ----------------------------------------
+  .           
+  .             template<typename _ForwardIterator, typename _Tp>
+  .               _GLIBCXX20_CONSTEXPR
+  .               inline typename
+  .               __gnu_cxx::__enable_if<!__is_scalar<_Tp>::__value, void>::__type
+  .               __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
+  .           	      const _Tp& __value)
+  .               {
+309 ( 0.01%)        for (; __first != __last; ++__first)
+396 ( 0.01%)  	*__first = __value;
+  .               }
+  .           
+  .             template<typename _ForwardIterator, typename _Tp>
+  .               _GLIBCXX20_CONSTEXPR
+  .               inline typename
+  .               __gnu_cxx::__enable_if<__is_scalar<_Tp>::__value, void>::__type
+  .               __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
+  .           	      const _Tp& __value)
+  .               {
+  2 ( 0.00%)        const _Tp __tmp = __value;
+ 67 ( 0.00%)        for (; __first != __last; ++__first)
+ 14 ( 0.00%)  	*__first = __tmp;
+ 14 ( 0.00%)  => ???:0x0000000000109100 (1x)
+  .               }
+  .           
+  .             // Specialization: for char types we can use memset.
+  .             template<typename _Tp>
+  .               _GLIBCXX20_CONSTEXPR
+  .               inline typename
+  .               __gnu_cxx::__enable_if<__is_byte<_Tp>::__value, void>::__type
+  .               __fill_a1(_Tp* __first, _Tp* __last, const _Tp& __c)
+-- line 932 ----------------------------------------
+-- line 1107 ----------------------------------------
+  .               _GLIBCXX20_CONSTEXPR
+  .               inline _OutputIterator
+  .               __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value,
+  .           	       std::random_access_iterator_tag)
+  .               {
+  .           #if __cplusplus >= 201103L
+  .                 static_assert(is_integral<_Size>{}, "fill_n must pass integral size");
+  .           #endif
+  4 ( 0.00%)        if (__n <= 0)
+  .           	return __first;
+  .           
+  .                 __glibcxx_requires_can_increment(__first, __n);
+  .           
+  .                 std::__fill_a(__first, __first + __n, __value);
+  .                 return __first + __n;
+  .               }
+  .           
+-- line 1123 ----------------------------------------
 
 --------------------------------------------------------------------------------
 -- Auto-annotated source: /usr/include/c++/11/bits/uniform_int_dist.h
@@ -675,10 +597,8 @@ The following files chosen for auto-annotation could not be found:
   ./elf/./elf/dl-deps.c
   ./elf/./elf/dl-environ.c
   ./elf/./elf/dl-error-skeleton.c
-  ./elf/./elf/dl-fini.c
   ./elf/./elf/dl-hwcaps.c
   ./elf/./elf/dl-hwcaps_split.c
-  ./elf/./elf/dl-init.c
   ./elf/./elf/dl-load.c
   ./elf/./elf/dl-lookup.c
   ./elf/./elf/dl-minimal-malloc.c
@@ -695,12 +615,10 @@ The following files chosen for auto-annotation could not be found:
   ./elf/./elf/get-dynamic-info.h
   ./elf/./elf/rtld.c
   ./iconv/./iconv/gconv_simple.c
-  ./io/../sysdeps/unix/sysv/linux/open64_nocancel.c
   ./libio/./libio/fileops.c
   ./libio/./libio/genops.c
   ./libio/./libio/getc.c
   ./libio/./libio/iofflush.c
-  ./libio/./libio/iofwrite.c
   ./libio/./libio/ioungetc.c
   ./libio/./libio/libioP.h
   ./malloc/./malloc/malloc.c
@@ -721,5 +639,5 @@ The following files chosen for auto-annotation could not be found:
 --------------------------------------------------------------------------------
 Ir              
 --------------------------------------------------------------------------------
-11,127 ( 0.41%)  events annotated
+10,594 ( 0.40%)  events annotated
 
