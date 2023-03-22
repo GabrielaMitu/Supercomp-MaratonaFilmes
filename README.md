@@ -84,12 +84,12 @@ Os seguintes comandos foram realizados:
 
 > valgrind --tool=callgrind ./aleatorizacao < input.txt
 
-> callgrind_annotate callgrind.out.6967 aleatorizacao.cpp > aleatorizacaoValgrindInput.txt
+> callgrind_annotate callgrind.out.5965 aleatorizacao.cpp > aleatorizacaoValgrindInput.txt
 
 **Obs.:** para não perder cada uma das análises, foi colocado o output dentro de aleatorizacaoValgrindInput.txt
 
 
-azendo uma análise total de todo o processamento do código, a parte do código que mais se gasta tempo é no input dos filmes, assim como ocorre na Heurística Gulosa. Como nessa parte do código ambas são equivalentes, então o tempo gasto é o mesmo, assim como a porcentagem.
+azendo uma análise total de todo o processamento do código, a parte do código que mais se gasta tempo é no input dos filmes, assim como ocorre na Heurística Gulosa. Como nessa parte do código ambas são equivalentes, o tempo gasto foi praticamente o mesmo, assim como a porcentagem (desta vez foi de 12.79%)
 
-Já acerca do tempo total gasto, foi registrado 2,721,851 unidades de tempo, ou seja, aproximadamente 1.19% a mais que a da Heurística Gulosa
+Já acerca do tempo total gasto, foi registrado 2,675,378 unidades de tempo, ou seja, aproximadamente 0.53% menor que a Heurística Gulosa
 
