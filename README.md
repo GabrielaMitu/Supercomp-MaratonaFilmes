@@ -89,7 +89,24 @@ Os seguintes comandos foram realizados:
 **Obs.:** para não perder cada uma das análises, foi colocado o output dentro de aleatorizacaoValgrindInput.txt
 
 
-azendo uma análise total de todo o processamento do código, a parte do código que mais se gasta tempo é no input dos filmes, assim como ocorre na Heurística Gulosa. Como nessa parte do código ambas são equivalentes, o tempo gasto foi praticamente o mesmo, assim como a porcentagem (desta vez foi de 12.79%)
+Fazendo uma análise total de todo o processamento do código, a parte do código que mais se gasta tempo é no input dos filmes, assim como ocorre na Heurística Gulosa. Como nessa parte do código ambas são equivalentes, o tempo gasto foi praticamente o mesmo, assim como a porcentagem (desta vez foi de 12.79%)
 
 Já acerca do tempo total gasto, foi registrado 2,675,378 unidades de tempo, ou seja, aproximadamente 0.53% menor que a Heurística Gulosa
 
+## Comparação entre Maratonas
+Apesar do tempo de execução da Heurística Aleatória ter sido um pouco menor que da Heurística Gulosa, ao se fazer a análise do gráfico do número de filmes na maratona pelos inputs, é visto o seguinte resultado:
+
+![image](https://user-images.githubusercontent.com/49621844/226927915-ac8c6885-7d60-49f1-8344-ba662cbac647.png)
+
+Os inputs respectivamente correspondem a:
+
+|                |Número de filmes               |Número de categorias         |
+|----------------|-------------------------------|-----------------------------|
+|Input0          |            10                 |              3              |
+|Input           |            100                |              5              |
+|Input2          |            500                |              10             |
+|Input3          |            1000               |              15             |
+|Input4          |            5000               |              20             |
+|Input5          |            10000              |              25             |
+
+Desta forma, é possível analisar que quanto menor o input (número de filmes e categorias menor) mais próximos são os resultados (número total de filmes na maratona) das heurísticas em questão. No gráfico também é percebido que ambas as Heurísticas em certo momento estabilizam o resultado. No caso da Heurística Gulosa, desde o input3 se estabilizou em 23 o número máximo de filmes possíveis na maratona. Já na Heurística Aleatória, desde o input a tendência dos filmes inclusos na maratona é de 8. O que significa que a partir de certo número de filmes e categorias, chega-se em um resultado mais eficiente em ambos os casos.
