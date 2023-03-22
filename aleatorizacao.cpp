@@ -155,25 +155,25 @@ int main()
 
     // -------- OUTPUT (TIRAR PARA A ANALISE NO VALGRIND) --------
     // ORDENANDO PARA IMPRIMIR
-    /*     sort(selected.begin(),selected.end(), my_compare);
+    sort(selected.begin(),selected.end(), my_compare);
 
-        // ESTADO FINAL DA MARATONA
-        cout << "Maratona: ";
-        for (int m = 0; m < static_cast<int>(maratona.size()); m++) {
-            cout << maratona[m];
-        }
-        cout << endl;
+    // ESTADO FINAL DA MARATONA
+    cout << "Maratona: ";
+    for (int m = 0; m < static_cast<int>(maratona.size()); m++) {
+        cout << maratona[m];
+    }
+    cout << endl;
 
-        // FILMES DA MARATONA
-        cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
+    // FILMES DA MARATONA
+    cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
 
-        cout << "----------" << endl;
-        // FILMES SELECIONADOS PARA ASSISTIR
-        cout << "Filmes da maratona: " << endl;
-        for (int s = 0; s < static_cast<int>(selected.size()); s++) {
-          cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
-        }
-         */
+    cout << "----------" << endl;
+    // FILMES SELECIONADOS PARA ASSISTIR
+    cout << "Filmes da maratona: " << endl;
+    for (int s = 0; s < static_cast<int>(selected.size()); s++) {
+        cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
+    }
+         
     return 0;
 }
 
