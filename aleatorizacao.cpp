@@ -155,7 +155,7 @@ int main()
 
     // -------- OUTPUT (TIRAR PARA A ANALISE NO VALGRIND) --------
     // ORDENANDO PARA IMPRIMIR
-/*     sort(selected.begin(),selected.end(), my_compare);
+    sort(selected.begin(),selected.end(), my_compare);
 
     // ESTADO FINAL DA MARATONA
     cout << "Maratona: ";
@@ -179,7 +179,7 @@ int main()
     cout << "Filmes da maratona: " << endl;
     for (int s = 0; s < static_cast<int>(selected.size()); s++) {
         cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
-    } */
+    }
 
 
         
