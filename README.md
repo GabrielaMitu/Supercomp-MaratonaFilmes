@@ -2,6 +2,13 @@
 ------------
 **Aluna:** Gabriela Mitu
 
+## Introdução
+Você quer passar um final de semana assistindo ao máximo de filmes possível, mas há restrições quanto aos horários disponíveis e ao número de títulos que podem ser vistos em cada categoria (comédia, drama, ação, etc).
+ - Objetivo: Maximizar o número de filmes assistidos em um dia, respeitando o limite de filmes por categoria.
+ - Cuidados que devem ser tomados: se nenhum filme se sobrepõe e se não passa do tempo máximo de maratona (1 dia)
+
+Para o início da solução do problema, foi criado um gerador que servirá como os inputs das opções de filmes para assistir na maratona;
+
 ## Gerador
 
 Responsável por criar os inputs das heurísticas, foi apenas modificado em relação ao tempo de duração de filme que foi deixado desta vez em 2.0 e o desvio padrão permaneceu em 1.0. Esta modificação se deve em razão de que na realidade, é mais comum o lançamento de filmes com 2h de duração e uma variação próxima (desvio padrão) de 1h.
@@ -50,7 +57,7 @@ int main(int argc, char *argv[]) {
 
 ## Inputs
 
-Os inputs respectivamente correspondem a:
+Com o Gerador, foram criados 6 inputs diferentes:
 
 |                |        Número de filmes       |    Número de categorias     |
 |----------------|-------------------------------|-----------------------------|
@@ -63,6 +70,8 @@ Os inputs respectivamente correspondem a:
 
 
 ## Heurística Gulosa
+
+A primeira implementação da heurística para nosso projeto consiste em uma implementação gulosa (Greedy), a qual ordena os filmes por hora de fim crescente e escolhe aqueles que começam primeiro e não conflitam com os filmes já escolhidos, além de verificar se há vagas disponíveis na categoria do filme.
 
 Para fazer considerações sobre o profiling (valgrind) do código-fonte, foi utilizado o input.txt (considerando 100 filmes e 5 categorias diferentes).
 
@@ -88,6 +97,8 @@ Foram feitas no total 2,689,673 chamadas de instruções.
 ------------
 ## Heurística Aleatória
 
+Essa implementação consiste na adaptação da heurística gulosa. Nela, foi feita uma modificação de modo que ao longo da seleção de um filme se tenha 25% de chance de pegar outro filme qualquer que respeite o horário. Isso fará com que a heurística tenha um pouco mais de exploration e possamos ter alguns resultados melhores.
+
 Para fazer considerações sobre o profiling (valgrind) do código-fonte, foi utilizado também o input.txt (considerando 100 filmes e 5 categorias diferentes).
 
 Os seguintes comandos foram realizados:
@@ -112,9 +123,12 @@ Apesar do número de instruções totais da Heurística Aleatória ter sido um p
 Desta forma, é possível analisar que quanto menor o input (número de filmes e categorias menor) mais próximos são os resultados (número total de filmes na maratona) das heurísticas em questão. No gráfico também é percebido que ambas as Heurísticas em certo momento estabilizam o resultado, aumento o numero de filmes e de categorias. No caso da Heurística Gulosa, desde o input3 se estabilizou em 23 o número máximo de filmes possíveis na maratona. Já na Heurística Aleatória, desde o input a tendência dos filmes inclusos na maratona é de 8. O que significa que a partir de certo número de filmes e categorias, chega-se em um resultado mais eficiente em ambos os casos.
 
 ## Tempo de Tela
-No caso do melhor tempo de tela em ambos os casos consiste, portanto, no input5, com mais filmes e categorias. Feitos os cálculos no arquivo GraficosComparativos.ipynb, é obtido o seguinte:
+No caso do melhor tempo de tela em ambos os casos consiste, portanto, no input5, com mais filmes e categorias. Baseado nele, foram feitos os cálculos no arquivo GraficosComparativos.ipynb e é obtido o seguinte:
  - Tempo de tela da Heurística Gulosa: 100%
  - Tempo de tela da Heurística Aleatória: 34.78% aproximadamente
 
-Logo, a Heurística Aleatória teve um desempenho muito pior que da Heurística Gulosa, a qual neste caso, conseguiu obter um resultado ótimo. Entretanto, vale salientar que a Heurística Gulosa nem sempre consegue garantir tal desempenho. 
+Logo, a Heurística Aleatória teve um desempenho muito pior que da Heurística Gulosa, a qual neste caso, conseguiu obter um resultado ótimo. Entretanto, vale salientar que a Heurística Gulosa nem sempre consegue garantir tal desempenho. ALém disso, ao observar o resultado do input, depara-se com o seguinte resultado:
+![image](https://user-images.githubusercontent.com/49621844/227331180-fd708f59-d8fa-49a1-ac6b-d856081af7c5.png)
+
+Foram assistidos 23 filmes no dia inteiro, o que se conclui que cada filme tinha apenas uma hora de duração (o que foi possível devido ao gerador com desvio padrão de 1.0). Portanto, mudar a duração média de cada filme com certeza diminuiria as chances de conseguir esse resultado otimo
 
