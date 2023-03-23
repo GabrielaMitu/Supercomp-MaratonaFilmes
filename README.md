@@ -114,6 +114,12 @@ Fazendo uma análise total de todo o processamento do código, a parte do códig
 
 Já acerca do número de instruções, foram registradas 2,675,378, ou seja, aproximadamente 0.53% menor que a Heurística Gulosa
 
+## Comparação entre Tempos de Execução
+Em python, ainda é possível fazer uma função para o cálculo do tempo de execução de ambos os executáveis (tal programação se encontra no arquivo GraficosComparativos.ipynb). Ao se plotar o gráfico do Tempo de Execução pelos inputs, foi obtido o seguinte:
+
+![image](https://user-images.githubusercontent.com/49621844/227335541-65443e0e-cd89-434c-bf06-b306987cb222.png)
+
+Nele, é possível obervar que a Heurística Gulosa, praticamente em todos os casos leva um pouco mais de tempo (pouco significativo) que a Heurística Aleatória de ser executado. Logo, de vantagem da Heurística Aleatória tem-se tanto um menor número de instruções necessárias como um menor tempo de execução. Entretanto, ainda é necessário analisar se houve um cumprimento adequado do objetivo principal de mais filmes assistidos na maratona
 
 ## Comparação entre Maratonas
 Apesar do número de instruções totais da Heurística Aleatória ter sido um pouco menor que da Heurística Gulosa, ao se fazer a análise do gráfico do número de filmes na maratona pelos inputs, é visto o seguinte resultado:
