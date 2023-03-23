@@ -77,7 +77,13 @@ int main() {
     }
     // -------- OUTPUT (TIRAR PARA A ANALISE NO VALGRIND) --------    
     // FILMES DA MARATONA
-    cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
+/*     cout << "Quantidade de filmes da maratona: " << selected.size() << endl;
+    int duracaoT = 0;
+    cout << "Duração total dos filmes selecionados: ";
+    for (int s = 0; s < static_cast<int>(selected.size()); s++) {
+        duracaoT += (selected[s].fim - selected[s].inicio);
+    }
+    cout << duracaoT << endl;
 
     cout << "----------" << endl;
 
@@ -85,7 +91,7 @@ int main() {
     cout << "Filmes da maratona: " << endl;
     for (int s = 0; s < selected.size(); s++) {
       cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
-    } 
+    }  */
 
   return 0;
 }
@@ -93,9 +99,9 @@ int main() {
 
 // PARA RODAR NO CMD:
 // g++ -o gulosa heuristicaGulosa.cpp
-//  
+// ./gulosa < inputs/input1.txt
 
 // PARA RODAR PARA ANALISAR COM VALGRIND:
 // g++ -Wall -O3 -g heuristicaGulosa.cpp -o gulosa
 // valgrind --tool=callgrind ./gulosa < input.txt
-// callgrind_annotate callgrind.out.6978 heuristicaGulosa.cpp > gulosaValgrindInput.txt
+// callgrind_annotate callgrind.out.6978 heuristicaGulosa.cpp
