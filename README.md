@@ -107,6 +107,14 @@ Já acerca do número de instruções, foram registradas 2,675,378, ou seja, apr
 ## Comparação entre Maratonas
 Apesar do número de instruções totais da Heurística Aleatória ter sido um pouco menor que da Heurística Gulosa, ao se fazer a análise do gráfico do número de filmes na maratona pelos inputs, é visto o seguinte resultado:
 
-![image](https://user-images.githubusercontent.com/49621844/226927915-ac8c6885-7d60-49f1-8344-ba662cbac647.png)
+![image](https://user-images.githubusercontent.com/49621844/227200410-104e38c1-3a75-4a92-b0cb-2417eb8119ce.png)
 
-Desta forma, é possível analisar que quanto menor o input (número de filmes e categorias menor) mais próximos são os resultados (número total de filmes na maratona) das heurísticas em questão. No gráfico também é percebido que ambas as Heurísticas em certo momento estabilizam o resultado. No caso da Heurística Gulosa, desde o input3 se estabilizou em 23 o número máximo de filmes possíveis na maratona. Já na Heurística Aleatória, desde o input a tendência dos filmes inclusos na maratona é de 8. O que significa que a partir de certo número de filmes e categorias, chega-se em um resultado mais eficiente em ambos os casos.
+Desta forma, é possível analisar que quanto menor o input (número de filmes e categorias menor) mais próximos são os resultados (número total de filmes na maratona) das heurísticas em questão. No gráfico também é percebido que ambas as Heurísticas em certo momento estabilizam o resultado, aumento o numero de filmes e de categorias. No caso da Heurística Gulosa, desde o input3 se estabilizou em 23 o número máximo de filmes possíveis na maratona. Já na Heurística Aleatória, desde o input a tendência dos filmes inclusos na maratona é de 8. O que significa que a partir de certo número de filmes e categorias, chega-se em um resultado mais eficiente em ambos os casos.
+
+## Tempo de Tela
+No caso do melhor tempo de tela em ambos os casos consiste, portanto, no input5, com mais filmes e categorias. Feitos os cálculos no arquivo GraficosComparativos.ipynb, é obtido o seguinte:
+ - Tempo de tela da Heurística Gulosa: 100%
+ - Tempo de tela da Heurística Aleatória: 34.78% aproximadamente
+
+Logo, a Heurística Aleatória teve um desempenho muito pior que da Heurística Gulosa, a qual neste caso, conseguiu obter um resultado ótimo. Entretanto, vale salientar que a Heurística Gulosa nem sempre consegue garantir tal desempenho. 
+
