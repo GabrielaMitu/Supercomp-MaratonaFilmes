@@ -127,7 +127,8 @@ No caso do melhor tempo de tela em ambos os casos consiste, portanto, no input5,
  - Tempo de tela da Heurística Gulosa: 100%
  - Tempo de tela da Heurística Aleatória: 34.78% aproximadamente
 
-Logo, a Heurística Aleatória teve um desempenho muito pior que da Heurística Gulosa, a qual neste caso, conseguiu obter um resultado ótimo. Entretanto, vale salientar que a Heurística Gulosa nem sempre consegue garantir tal desempenho. ALém disso, ao observar o resultado do input, depara-se com o seguinte resultado:
+Logo, a Heurística Aleatória teve um desempenho muito pior que da Heurística Gulosa, a qual neste caso, conseguiu obter um resultado ótimo. Entretanto, vale salientar que a Heurística Gulosa nem sempre consegue garantir tal desempenho. Além disso, ao observar o resultado do input, depara-se com o seguinte resultado:
+
 ![image](https://user-images.githubusercontent.com/49621844/227331180-fd708f59-d8fa-49a1-ac6b-d856081af7c5.png)
 
 Foram assistidos 23 filmes no dia inteiro, o que se conclui que cada filme tinha apenas uma hora de duração (o que foi possível devido ao gerador com desvio padrão de 1.0). Portanto, mudar a duração média de cada filme com certeza diminuiria as chances de conseguir esse resultado otimo
