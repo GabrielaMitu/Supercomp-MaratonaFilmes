@@ -89,7 +89,7 @@ int main() {
 
     // FILMES SELECIONADOS PARA ASSISTIR
     cout << "Filmes da maratona: " << endl;
-    for (int s = 0; s < selected.size(); s++) {
+    for (int s = 0; s < static_cast<int>(selected.size()); s++) {
       cout << selected[s].inicio << " " << selected[s].fim << " " << selected[s].categoria << endl;
     } 
 
