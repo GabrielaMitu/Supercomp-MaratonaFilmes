@@ -92,7 +92,7 @@ Neste output, são visualizadas várias informações sobre a execução do seu 
 - A segunda linha indica o tempo gasto para executar a leitura de dados do vetor de filmes. No caso, a leitura é executada 900 vezes e representa 0.03% do tempo total gasto em execução do programa.
 - A terceira linha indica o momento que ele percorre todo o input.txt, que é bem longo. E por razão disso, ele acaba representando uma porcentagem tão mais significativa que o restante do codigo
 
-Foram feitas no total 2,689,673 chamadas de instruções.
+Foram feitas no total 2,689,673 chamadas de instruções e no restante do código, não teve nenhuma porcentagem signficativa que o algoritmo gastou como aconteceu com os valores de input.
 
 
 ------------
@@ -113,7 +113,7 @@ Os seguintes comandos foram realizados:
 
 Fazendo uma análise total de todo o processamento do código, a parte do código que mais se gasta tempo é no input dos filmes, assim como ocorre na Heurística Gulosa. Como nessa parte do código ambas são equivalentes, o tempo gasto foi praticamente o mesmo, assim como a porcentagem (desta vez foi de 12.79%)
 
-Já acerca do número de instruções, foram registradas 2,675,378, ou seja, aproximadamente 0.53% menor que a Heurística Gulosa
+Já acerca do número de instruções, foram registradas 2,675,378, ou seja, aproximadamente 0.53% menor que a Heurística Gulosa, o que não é significativo. Além de que também não teve nenhuma porcentagem signficativa que o algoritmo gastou como aconteceu com os valores de input.
 
 ## Comparação entre Tempos de Execução
 Em python, ainda é possível fazer uma função para o cálculo do tempo de execução de ambos os executáveis (tal programação se encontra no arquivo GraficosComparativos.ipynb). Ao se plotar o gráfico do Tempo de Execução pelos inputs, foi obtido o seguinte:
