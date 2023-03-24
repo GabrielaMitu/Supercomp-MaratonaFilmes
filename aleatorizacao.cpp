@@ -192,5 +192,5 @@ int main()
 
 // PARA RODAR PARA ANALISAR COM VALGRIND:
 // g++ -Wall -O3 -g aleatorizacao.cpp -o aleatorizacao
-// valgrind --tool=callgrind ./aleatorizacao < input.txt
+// valgrind --tool=callgrind ./aleatorizacao < inputs/input1.txt
 // callgrind_annotate callgrind.out.6978 aleatorizacao.cpp
