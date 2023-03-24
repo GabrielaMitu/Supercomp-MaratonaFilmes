@@ -8,11 +8,11 @@ Um pessoa quer passar um final de semana assistindo ao máximo de filmes possív
  - Cuidados que devem ser tomados: se nenhum filme se sobrepõe e se não passa do tempo máximo de maratona (1 dia)
  - Algoritmos: Heurística Gulosa e Aleatorizada
 
-Para o início da solução do problema, foi criado um gerador que servirá como os inputs das opções de filmes para assistir na maratona;
+Para o início da solução do problema, foi criado um gerador que servirá como os inputs das opções de filmes para assistir na maratona.
 
 ## Gerador
 
-Responsável por criar os inputs das heurísticas, foi apenas modificado em relação ao tempo de duração de filme que foi deixado desta vez em 2.0 e o desvio padrão permaneceu em 1.0. Esta modificação se deve em razão de que na realidade, é mais comum o lançamento de filmes com 2h de duração e uma variação próxima (desvio padrão) de 1h.
+O gerador é responsável por criar os inputs das heurísticas e modificado em relação ao tempo de duração de filme que foi deixado desta vez em 2.0 e o desvio padrão em 1.0. Esta modificação se deve em razão de que na realidade, é mais comum o lançamento de filmes com 2h de duração e uma variação próxima (desvio padrão) de 1h.
 
 Código do Gerador utilizado:
 
