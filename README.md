@@ -139,3 +139,19 @@ Logo, a Heurística Aleatória teve um desempenho muito pior que da Heurística 
 
 Foram assistidos 23 filmes no dia inteiro, o que se conclui que cada filme tinha apenas uma hora de duração (o que foi possível devido ao gerador com desvio padrão de 1.0). Portanto, mudar a duração média de cada filme com certeza diminuiria as chances de conseguir esse resultado otimo
 
+## Numero de Filmes x Tempo de Execução
+Outro estudo que é possível fazer é a análise do que impacta mais o tempo de execução, o número de filmes ou número de categorias.
+Neste caso, os inputs dentro da pasta inputsCatConst foram usados. Os quais variam o número de filmes e deixam as categorias constantes em 10:
+
+|                |        Número de filmes       |    Número de categorias     |
+|----------------|-------------------------------|-----------------------------|
+|    Input0      |            500                |              10             |
+|    Input1      |            1000               |              10             |
+|    Input2      |            5000               |              10             |
+|    Input3      |            10000              |              10             |
+
+O seguinte gráfico é plotado:
+
+![image](https://user-images.githubusercontent.com/49621844/227521343-311d2b3b-8770-4332-aa2d-514de0676434.png)
+
+Nele, é possível observar que quanto maior o número de filmes envolvidos para serem analisados e colocados na maratona, maior o tempo de execução, o que era esperado, indepedente da heurística.
