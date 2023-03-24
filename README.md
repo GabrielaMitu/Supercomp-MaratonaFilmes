@@ -139,7 +139,7 @@ Logo, a Heurística Aleatória teve um desempenho muito pior que da Heurística 
 
 Foram assistidos 23 filmes no dia inteiro, o que se conclui que cada filme tinha apenas uma hora de duração (o que foi possível devido ao gerador com desvio padrão de 1.0). Portanto, mudar a duração média de cada filme com certeza diminuiria as chances de conseguir esse resultado otimo
 
-## Numero de Filmes x Tempo de Execução
+## Tempo de Execução X Numero de Filmes
 Outro estudo que é possível fazer é a análise do que impacta mais o tempo de execução, o número de filmes ou número de categorias.
 Neste caso, os inputs dentro da pasta inputsCatConst foram usados. Os quais variam o número de filmes e deixam as categorias constantes em 10:
 
@@ -152,6 +152,23 @@ Neste caso, os inputs dentro da pasta inputsCatConst foram usados. Os quais vari
 
 O seguinte gráfico é plotado:
 
-![image](https://user-images.githubusercontent.com/49621844/227521343-311d2b3b-8770-4332-aa2d-514de0676434.png)
+![image](https://user-images.githubusercontent.com/49621844/227524871-20c84284-f8fc-4915-8de1-2696ef721d0e.png)
 
 Nele, é possível observar que quanto maior o número de filmes envolvidos para serem analisados e colocados na maratona, maior o tempo de execução, o que era esperado, indepedente da heurística.
+
+## Tempo de Execução X Numero de Categorias
+No caso do estudo do gráfico referente à variação do número de categorias, o número de filmes está constante em 10000 e foram separados os seguintes inputs (dentro da pasta inputsFilmesConst):
+
+|                |        Número de filmes       |    Número de categorias     |
+|----------------|-------------------------------|-----------------------------|
+|    Input0      |            10000              |              10             |
+|    Input1      |            10000              |              15             |
+|    Input2      |            10000              |              20             |
+|    Input3      |            10000              |              25             |
+
+Além disso, ao criar esse gráfico, foi percebido que a cada plotagem variava bastante entre os valores de tempo de execução. Portanto, foi feito o processo de cálculo do tempo de execução 30x e foi tirada a média deles para se ter uma noção melhor de como o gráfico realmente se comportava. E foi gerado o seguinte gráfico:
+
+![image](https://user-images.githubusercontent.com/49621844/227525695-a41140ca-891a-4e2f-8578-55ac9acca1c5.png)
+
+Com isso, é possível concluir que a variação do número de categorias não acarreta um efeito muito significativo no tempo de execução
+
