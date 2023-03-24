@@ -3,9 +3,10 @@
 **Aluna:** Gabriela Mitu
 
 ## Introdução
-Você quer passar um final de semana assistindo ao máximo de filmes possível, mas há restrições quanto aos horários disponíveis e ao número de títulos que podem ser vistos em cada categoria (comédia, drama, ação, etc).
+Um pessoa quer passar um final de semana assistindo ao máximo de filmes possível, mas há restrições quanto aos horários disponíveis e ao número de títulos que podem ser vistos em cada categoria (comédia, drama, ação, etc).
  - Objetivo: Maximizar o número de filmes assistidos em um dia, respeitando o limite de filmes por categoria.
  - Cuidados que devem ser tomados: se nenhum filme se sobrepõe e se não passa do tempo máximo de maratona (1 dia)
+ - Algoritmos: Heurística Gulosa e Aleatorizada
 
 Para o início da solução do problema, foi criado um gerador que servirá como os inputs das opções de filmes para assistir na maratona;
 
