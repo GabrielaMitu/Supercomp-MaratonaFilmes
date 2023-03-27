@@ -3,7 +3,7 @@
 **Aluna:** Gabriela Mitu
 
 ## Introdução
-Um pessoa quer passar um final de semana assistindo ao máximo de filmes possível, mas há restrições quanto aos horários disponíveis e ao número de títulos que podem ser vistos em cada categoria (comédia, drama, ação, etc).
+Um pessoa quer passar um final de semana assistindo o máximo de filmes possível em um dia, mas há restrições quanto aos horários disponíveis e ao número de títulos que podem ser vistos em cada categoria (comédia, drama, ação, etc).
  - Objetivo: Maximizar o número de filmes assistidos em um dia, respeitando o limite de filmes por categoria.
  - Cuidados que devem ser tomados: se nenhum filme se sobrepõe e se não passa do tempo máximo de maratona (1 dia)
  - Algoritmos: Heurística Gulosa e Aleatorizada
@@ -84,6 +84,8 @@ Os seguintes comandos foram realizados:
 
 > callgrind_annotate callgrind.out.7983 heuristicaGulosa.cpp
 
+**Obs.:** O callgrind foi deixado dentro da pasta callgrinds
+
 Neste output, são visualizadas várias informações sobre a execução do seu programa, incluindo a porcentagem de tempo gasto em cada parte do código. Fazendo uma análise total de todo o processamento do código, a parte do código que mais se gasta tempo é no input dos filmes:
 
 ![image](https://user-images.githubusercontent.com/49621844/226221111-2d06b05d-e1e0-4cae-8e2c-844b6c58c296.png)
@@ -92,7 +94,7 @@ Neste output, são visualizadas várias informações sobre a execução do seu 
 - A segunda linha indica o tempo gasto para executar a leitura de dados do vetor de filmes. No caso, a leitura é executada 900 vezes e representa 0.03% do tempo total gasto em execução do programa.
 - A terceira linha indica o momento que ele percorre todo o input.txt, que é bem longo. E por razão disso, ele acaba representando uma porcentagem tão mais significativa que o restante do codigo
 
-Foram feitas no total 2,689,673 chamadas de instruções e no restante do código, não teve nenhuma porcentagem signficativa que o algoritmo gastou como aconteceu com os valores de input.
+Foram feitas no total 2,689,673 chamadas de instruções e no restante do código, não houve nenhuma porcentagem signficativa que o algoritmo gastou como aconteceu com os valores de input.
 
 
 ------------
@@ -110,6 +112,7 @@ Os seguintes comandos foram realizados:
 
 > callgrind_annotate callgrind.out.5965 aleatorizacao.cpp
 
+**Obs.:** O callgrind foi deixado dentro da pasta callgrinds
 
 Fazendo uma análise total de todo o processamento do código, a parte do código que mais se gasta tempo é no input dos filmes, assim como ocorre na Heurística Gulosa. Como nessa parte do código ambas são equivalentes, o tempo gasto foi praticamente o mesmo, assim como a porcentagem (desta vez foi de 12.79%)
 
@@ -120,10 +123,10 @@ Em python, ainda é possível fazer uma função para o cálculo do tempo de exe
 
 ![image](https://user-images.githubusercontent.com/49621844/227335541-65443e0e-cd89-434c-bf06-b306987cb222.png)
 
-Nele, é possível obervar que a Heurística Gulosa, praticamente em todos os casos leva um pouco mais de tempo (pouco significativo) que a Heurística Aleatória de ser executado. Logo, de vantagem da Heurística Aleatória tem-se tanto um menor número de instruções necessárias como um menor tempo de execução. Entretanto, ainda é necessário analisar se houve um cumprimento adequado do objetivo principal de mais filmes assistidos na maratona
+Nele, é possível obervar que a Heurística Gulosa, praticamente em todos os casos leva um pouco mais de tempo (pouco significativo) que a Heurística Aleatória de ser executado. Logo, de vantagem da Heurística Aleatória tem-se tanto um menor número de instruções necessárias como um menor tempo de execução. Entretanto, ainda é necessário analisar se houve o cumprimento adequado do objetivo principal de mais filmes assistidos na maratona
 
 ## Comparação entre Maratonas
-Apesar do número de instruções totais da Heurística Aleatória ter sido um pouco menor que da Heurística Gulosa, ao se fazer a análise do gráfico do número de filmes na maratona pelos inputs, é visto o seguinte resultado:
+Ao se fazer a análise do gráfico do número de filmes na maratona pelos inputs, é visto o seguinte resultado:
 
 ![image](https://user-images.githubusercontent.com/49621844/227200410-104e38c1-3a75-4a92-b0cb-2417eb8119ce.png)
 
@@ -138,7 +141,7 @@ Logo, a Heurística Aleatória teve um desempenho muito pior que da Heurística 
 
 ![image](https://user-images.githubusercontent.com/49621844/227331180-fd708f59-d8fa-49a1-ac6b-d856081af7c5.png)
 
-Foram assistidos 23 filmes no dia inteiro, o que se conclui que cada filme tinha apenas uma hora de duração (o que foi possível devido ao gerador com desvio padrão de 1.0). Portanto, mudar a duração média de cada filme com certeza diminuiria as chances de conseguir esse resultado otimo
+Foram assistidos 23 filmes no dia inteiro, o que se conclui que cada filme tinha apenas uma hora de duração (o que foi possível devido ao gerador com desvio padrão de 1.0). Portanto, mudar a duração média de cada filme certamente diminuiria as chances de conseguir esse resultado otimo
 
 ## Tempo de Execução X Numero de Filmes
 Outro estudo que é possível fazer é a análise do que impacta mais o tempo de execução, o número de filmes ou número de categorias.
