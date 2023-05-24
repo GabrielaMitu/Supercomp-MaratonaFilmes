@@ -185,7 +185,12 @@ Para fazer considerações sobre o profiling (valgrind) do código-fonte, foi ut
 
 > valgrind --tool=callgrind ./exaustiva < inputs/input0.txt
 
-> callgrind_annotate callgrind.out.7983 exaustiva.cpp
+> callgrind_annotate callgrind.out.33991 exaustiva.cpp
 
 **Obs.:** O callgrind foi deixado dentro da pasta callgrinds
 
+Ao fazer a análise de todo o processamento do código, primeiramente é tomado nota do número de instrucões, que foi de 2,442,005, ou seja, a menor comparado com as heurísticas anteriores. Neste caso, houveram 3 partes principais do código que mais gastaram tempo. O input dos filmes (1,49%) dessa vez não foi a que teve maior gasto e sim a função da buscaExaustiva dentro da main (2,01%), o que faz sentido, afinal ela é a responsável pela busca exaustiva de todas as combinações possíveis de filmes de forma recursiva e, em cada passo, decide se o filme atual deve ser selecionado ou não. Para tomar essa decisão, a função realiza diversas verificações, como verificar se a seleção atual é válida (respeita o limite de filmes por categoria) e se o filme atual não se sobrepõe a nenhum filme já selecionado.
+
+A outra parte do código que consome bastante tempo é a primeira recursiva da função buscaExaustiva (1,38%), pois embora essa chamada recursiva possa reduzir o espaço de busca ao não selecionar o filme atual, ainda é necessário percorrer todos os filmes restantes e verificar todas as combinações possíveis. Portanto, essa parte do código também consome um tempo significativo de processamento.
+
+**Obs.:** Uma possível razão da segunda recursiva do código desta mesma função não ter um gasto significativo como as outras (0,63%) é por causa da verificação de sobreposição (hasOverlap), o que pode ajudar a reduzir o espaço de busca, evitando a análise de combinações que já sabemos que não são válidas. Isso pode levar a uma economia de tempo de processamento significativa, pois evita a exploração de ramos desnecessários no espaço de busca.
