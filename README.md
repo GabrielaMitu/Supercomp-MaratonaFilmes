@@ -1,4 +1,4 @@
-# Relatório Parcial - Maratona de Filmes
+# Relatório - Maratona de Filmes
 ------------
 **Aluna:** Gabriela Mitu
 
@@ -175,4 +175,17 @@ Além disso, ao criar esse gráfico, foi percebido que a cada plotagem variava b
 ![image](https://user-images.githubusercontent.com/49621844/227525695-a41140ca-891a-4e2f-8578-55ac9acca1c5.png)
 
 Com isso, é possível concluir que a variação do número de categorias não acarreta um efeito muito significativo no tempo de execução
+
+## Busca Exaustiva
+Outra implementação que foi feita é a Busca Exaustiva, a qual busca encontrar a melhor seleção de filmes para a maratona. O algoritmo testa todas as combinações possíveis de filmes, verificando se a seleção é válida (respeita o limite de filmes por categoria) e calculando a duração total da seleção. Ele armazena a melhor seleção encontrada até o momento. Dado que ele faz essa busca testantando todas as combinações, certamente ela necessita de um maior tempo de processamento. Desta forma,será testado o valgrind com inputs menores a fim de analisar o funcionamento e resultados de forma mais prática.
+
+Para fazer considerações sobre o profiling (valgrind) do código-fonte, foi utilizado então o input0.txt (considerando 10 filmes e 3 categorias diferentes) e o input50.txt
+
+> g++ -Wall -O3 -g exaustiva.cpp -o exaustiva
+
+> valgrind --tool=callgrind ./exaustiva < inputs/input0.txt
+
+> callgrind_annotate callgrind.out.7983 exaustiva.cpp
+
+**Obs.:** O callgrind foi deixado dentro da pasta callgrinds
 
