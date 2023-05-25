@@ -194,3 +194,14 @@ Ao fazer a análise de todo o processamento do código, primeiramente é tomado 
 A outra parte do código que consome bastante tempo é a primeira recursiva da função buscaExaustiva (1,38%), pois embora essa chamada recursiva possa reduzir o espaço de busca ao não selecionar o filme atual, ainda é necessário percorrer todos os filmes restantes e verificar todas as combinações possíveis. Portanto, essa parte do código também consome um tempo significativo de processamento.
 
 **Obs.:** Uma possível razão da segunda recursiva do código desta mesma função não ter um gasto significativo como as outras (0,63%) é por causa da verificação de sobreposição (hasOverlap), o que pode ajudar a reduzir o espaço de busca, evitando a análise de combinações que já sabemos que não são válidas. Isso pode levar a uma economia de tempo de processamento significativa, pois evita a exploração de ramos desnecessários no espaço de busca.
+
+## Busca Exaustiva x Heurística Gulosa
+Dado que a Busca Exaustiva exige um tempo de processamento elevado, serão analisados inputs menores. Por exemplo, no input0.txt que possui apenas 10 filmes e 2 categorias, já é possível analisar uma melhoria na seleção de filmes para a maratona:
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/a07ac850-e51f-4379-94a8-598c69a25be7)
+
+Enquanto isso na Gulosa:
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/b2f007d8-5855-4939-a8cb-a86ac27eeb4e)
+
+Havendo uma melhora no tempo de tela de 3 horas e mantendo a mesma quantidade de filmes
