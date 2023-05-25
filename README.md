@@ -196,6 +196,8 @@ A outra parte do código que consome bastante tempo é a primeira recursiva da f
 **Obs.:** Uma possível razão da segunda recursiva do código desta mesma função não ter um gasto significativo como as outras (0,63%) é por causa da verificação de sobreposição (hasOverlap), o que pode ajudar a reduzir o espaço de busca, evitando a análise de combinações que já sabemos que não são válidas. Isso pode levar a uma economia de tempo de processamento significativa, pois evita a exploração de ramos desnecessários no espaço de busca.
 
 ## Busca Exaustiva x Heurística Gulosa
+Dentre as heurísticas estudadas anteriormente, a heurística gulosa teve o melhor desempenho. Então, será feita uma comparação deste novo algoritmo de busca exaustiva com ela.
+
 Dado que a Busca Exaustiva exige um tempo de processamento elevado, serão analisados inputs menores. Por exemplo, no input0.txt que possui apenas 10 filmes e 2 categorias, já é possível analisar uma melhoria na seleção de filmes para a maratona:
 
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/a07ac850-e51f-4379-94a8-598c69a25be7)
@@ -204,4 +206,23 @@ Enquanto isso na Gulosa:
 
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/b2f007d8-5855-4939-a8cb-a86ac27eeb4e)
 
-Havendo uma melhora no tempo de tela de 3 horas e mantendo a mesma quantidade de filmes
+Havendo uma melhora no tempo de tela de 3 horas e mantendo a mesma quantidade de filmes.
+
+Outros dois inputs que foram utilizados para análise foram: input25.txt e input50.txt:
+
+|                |        Número de filmes       |    Número de categorias     |
+|----------------|-------------------------------|-----------------------------|
+|    Input25     |            25                 |              3              |
+|    Input50     |            50                 |              5              |
+
+Para uma melhor visualização, foi feito um gráfico da eficiência do tempo de tela na maratona em cada um dos inputs:
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/9d8d317c-eef5-4c34-93f6-dca74b9d1733)
+
+Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. Entretanto, o tempo de execução é muito mais demorado:
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/e2ddf5f8-96dd-4c4a-baba-c2abc5117f70)
+
+Até 25 filmes a busca exaustiva consegue ter um tempo de processamento maior que a gulosa, mas ainda razoável. Já colocando o dobro de filmes, ou seja, 50 filmes, ela aumenta o tempo de execução em 23 segundos:
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/e04dbb74-650f-4b87-967b-fe78a5d837dc)
