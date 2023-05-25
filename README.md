@@ -219,10 +219,8 @@ Para uma melhor visualização, foi feito um gráfico da eficiência do tempo de
 
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/9d8d317c-eef5-4c34-93f6-dca74b9d1733)
 
-Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. Entretanto, o tempo de execução é muito mais demorado:
+Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. Entretanto, o tempo de execução é muito mais demorado. Até 25 filmes a busca exaustiva consegue ter um tempo de processamento maior que a gulosa, mas ainda razoável. Já colocando o dobro de filmes, ou seja, 50 filmes, ela aumenta o tempo de execução em 23 segundos:
 
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/e2ddf5f8-96dd-4c4a-baba-c2abc5117f70)
 
-Até 25 filmes a busca exaustiva consegue ter um tempo de processamento maior que a gulosa, mas ainda razoável. Já colocando o dobro de filmes, ou seja, 50 filmes, ela aumenta o tempo de execução em 23 segundos:
 
-![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/e04dbb74-650f-4b87-967b-fe78a5d837dc)
