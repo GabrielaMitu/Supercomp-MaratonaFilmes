@@ -226,11 +226,17 @@ Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. E
 
 ## Exaustiva com OpenMP
 
+Outra implementação feita no estudo é a tulização de OpenMP junto com a busca exaustiva. O OpenMP permitirá que os desenvolvedores escrevam programas que podem ser executados de forma eficiente em sistemas paralelos, logo é esperado que o tempo de execução seja menor.
+
 Nessa versão, a busca exaustiva é distribuída entre as threads usando a diretiva #pragma omp for, enquanto a região crítica de atualização das melhores soluções é protegida por #pragma omp critical. Cada thread terá sua própria cópia das variáveis selecaoAtual e cntCat para evitar condições de corrida.
 
 Cada thread realizará sua própria busca exaustiva dentro de uma parte específica do espaço de busca e, no final, as melhores soluções serão combinadas para obter o resultado final.
 
+Como resultado do tempo de execução, ele teve um desempenho pior do que o esperado:
 
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/e66369fd-593e-418a-91eb-b72748a40c80)
+
+Como é possível observar, ele teve um tempo de execução equivalente ao dobro do que a busca exaustiva. Uma das razões é que a busca exaustiva em si é um algoritmo de complexidade exponencial, o que significa que o tempo de execução aumenta rapidamente à medida que o tamanho do problema aumenta. Além disso, o uso de regiões críticas e a sincronização entre threads introduzidas pelas diretivas #pragma omp critical podem ter um impacto negativo no desempenho quando o número de threads aumenta.
 
 ## Paralelismo com GPU
 
