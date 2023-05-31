@@ -208,11 +208,14 @@ Enquanto isso na Gulosa:
 
 Havendo uma melhora no tempo de tela de 3 horas e mantendo a mesma quantidade de filmes.
 
-Outros dois inputs que foram utilizados para análise foram: input25.txt e input50.txt:
+Outros inputs que foram utilizados para análise foram: input15.txt, input25.txt, input35.txt e input50.txt:
 
 |                |        Número de filmes       |    Número de categorias     |
 |----------------|-------------------------------|-----------------------------|
+|    Input0      |            10000              |              10             |
+|    Input15     |            15                 |              2              |
 |    Input25     |            25                 |              3              |
+|    Input35     |            35                 |              4              |
 |    Input50     |            50                 |              5              |
 
 Para uma melhor visualização, foi feito um gráfico da eficiência do tempo de tela na maratona em cada um dos inputs:
