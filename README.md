@@ -212,7 +212,7 @@ Outros inputs que foram utilizados para análise foram: input15.txt, input25.txt
 
 |                |        Número de filmes       |    Número de categorias     |
 |----------------|-------------------------------|-----------------------------|
-|    Input0      |            10000              |              10             |
+|    Input0      |            10                 |              3              |
 |    Input15     |            15                 |              2              |
 |    Input25     |            25                 |              3              |
 |    Input35     |            35                 |              4              |
@@ -220,12 +220,11 @@ Outros inputs que foram utilizados para análise foram: input15.txt, input25.txt
 
 Para uma melhor visualização, foi feito um gráfico da eficiência do tempo de tela na maratona em cada um dos inputs:
 
-![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/9d8d317c-eef5-4c34-93f6-dca74b9d1733)
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/c4187cdb-4320-4298-90d8-f58e6fd2b829)
 
 Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. Entretanto, o tempo de execução é muito mais demorado. Até 25 filmes a busca exaustiva consegue ter um tempo de processamento maior que a gulosa, mas ainda razoável. Já colocando o dobro de filmes, ou seja, 50 filmes, ela aumenta o tempo de execução em 23 segundos:
 
-![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/e2ddf5f8-96dd-4c4a-baba-c2abc5117f70)
-
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/14a796e1-54cb-468a-ba70-7bcc6d7cd287)
 
 ## Exaustiva com OpenMP
 
@@ -237,7 +236,7 @@ Cada thread realizará sua própria busca exaustiva dentro de uma parte específ
 
 Como resultado do tempo de execução, ele teve um desempenho pior do que o esperado:
 
-![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/e66369fd-593e-418a-91eb-b72748a40c80)
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/0c3308ba-20ba-4deb-915b-94c3afc0f285)
 
 Como é possível observar, ele teve um tempo de execução equivalente ao dobro do que a busca exaustiva. Uma das razões é que a busca exaustiva em si é um algoritmo de complexidade exponencial, o que significa que o tempo de execução aumenta rapidamente à medida que o tamanho do problema aumenta. Além disso, o uso de regiões críticas e a sincronização entre threads introduzidas pelas diretivas #pragma omp critical podem ter um impacto negativo no desempenho quando o número de threads aumenta.
 
