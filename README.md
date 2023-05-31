@@ -220,7 +220,7 @@ Outros inputs que foram utilizados para análise foram: input15.txt, input25.txt
 
 Para uma melhor visualização, foi feito um gráfico da eficiência do tempo de tela na maratona em cada um dos inputs:
 
-![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/c4187cdb-4320-4298-90d8-f58e6fd2b829)
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/ca559150-424e-49b8-b9a6-9f6d72710815)
 
 Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. Entretanto, o tempo de execução é muito mais demorado. Até 25 filmes a busca exaustiva consegue ter um tempo de processamento maior que a gulosa, mas ainda razoável. Já colocando o dobro de filmes, ou seja, 50 filmes, ela aumenta o tempo de execução em 23 segundos:
 
