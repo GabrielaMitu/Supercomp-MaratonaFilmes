@@ -224,3 +224,38 @@ Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. E
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/e2ddf5f8-96dd-4c4a-baba-c2abc5117f70)
 
 
+## Exaustiva com OpenMP
+
+Nessa versão, a busca exaustiva é distribuída entre as threads usando a diretiva #pragma omp for, enquanto a região crítica de atualização das melhores soluções é protegida por #pragma omp critical. Cada thread terá sua própria cópia das variáveis selecaoAtual e cntCat para evitar condições de corrida.
+
+Cada thread realizará sua própria busca exaustiva dentro de uma parte específica do espaço de busca e, no final, as melhores soluções serão combinadas para obter o resultado final.
+
+
+
+## Paralelismo com GPU
+
+Esta etapa do projeto consiste em resolver nosso problema por meio da biblioteca Thrust.
+
+Para resolver esse problema utilizando a biblioteca thrust, podemos utilizar um algoritmo de programação dinâmica para construir a solução de forma eficiente. O algoritmo consiste em criar uma matriz dp de tamanho (N+1) x (M+1) para armazenar o número máximo de filmes que podem ser assistidos até o filme i e a categoria j.
+
+O código usa dois loops for aninhados para percorrer todas as combinações possíveis de filmes e categorias.
+- O loop externo percorre os filmes de 1 até n (número de filmes disponíveis para a maratona no input).
+- O loop interno percorre as categorias de 1 até m (número de categorias).
+
+Para cada combinação de filme e categoria, o código verifica se é possível selecionar o filme atual, levando em consideração as restrições da categoria e a seleção anterior de filmes.
+
+Ele cria uma variável max_count para armazenar o número máximo de filmes selecionados até o momento para a combinação atual.
+
+Em seguida, há um terceiro loop for que percorre os filmes anteriores (até o índice i-1) para comparar com o filme atual.
+
+Dentro desse terceiro loop, o código verifica se o filme anterior pertence à categoria atual (filmeAnterior.categoria == j), se seu horário de término é menor ou igual ao horário de início do filme atual (filmeAnterior.fim <= filmeAtual.inicio), e se a quantidade máxima de filmes permitida para essa categoria ainda não foi atingida (dp[(k * (m + 1)) + j - 1] + 1 <= max_filmes_dev[j - 1]).
+
+Se todas essas condições forem verdadeiras, o código atualiza max_count para o valor máximo entre max_count e o número de filmes selecionados até o filme anterior na categoria anterior, mais 1 (dp[(k * (m + 1)) + j - 1] + 1).
+
+Caso contrário, se as condições não forem atendidas, o código atualiza max_count para o valor máximo entre max_count e o número de filmes selecionados até o filme anterior na mesma categoria (dp[(k * (m + 1)) + j]).
+
+Após o loop sobre os filmes anteriores, o código atribui o valor max_count à posição correspondente na matriz de programação dinâmica dp para a combinação atual (dp[(i * (m + 1)) + j] = max_count).
+
+Em seguida, o código verifica se max_count é maior que o número máximo de filmes já selecionados (max_count > maxSelecionados). Se for, atualiza maxSelecionados com o valor de max_count e a duração máxima total com a diferença entre o horário de término e o horário de início do filme atual (duracaoMaxTotal = filmeAtual.fim - filmeAtual.inicio). O processo continua para todas as combinações de filmes e categorias.
+
+Essa etapa de programação dinâmica permite determinar a seleção ótima de filmes para a maratona, considerando as restrições de categorias e horários de início e término dos filmes. O resultado final será armazenado na matriz dp e usado posteriormente para reconstruir a seleção ótima de filmes.
