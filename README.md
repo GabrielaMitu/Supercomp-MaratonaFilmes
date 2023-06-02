@@ -294,3 +294,8 @@ A fim de reconstruir a seleção ótima da maratona é feito um loop for que ond
 
 Se o filme correspondente foi selecionado, recuperamos o filme da lista de filmes_filtrados usando o índice i - 1. Esse filme é armazenado na variável filmeSelecionado e adiciona-se o filmeSelecionado à lista melhorSelecao_dev, que armazena a seleção ótima dos filmes. É verificado também o tempo de tela da maratona, se for maior, substitui pela que tem maior duração (duracaoMaxTotal).
 
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/3df3fa04-ca1d-4883-b38b-566a3bd0c010)
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/da56ca99-b604-4c45-9ff5-fffb9c86af55)
+
+
