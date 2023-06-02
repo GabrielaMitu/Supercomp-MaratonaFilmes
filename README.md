@@ -189,13 +189,19 @@ Para fazer considerações sobre o profiling (valgrind) do código-fonte, foi ut
 
 **Obs.:** O callgrind foi deixado dentro da pasta callgrinds
 
+Ao fazer a análise de todo o processamento do código, primeiramente é tomado nota do número de instrucões, que foi de 2,442,005, ou seja, a menor comparado com as heurísticas anteriores. Neste caso, houveram 3 partes principais do código que mais gastaram tempo. O input dos filmes (1,49%) dessa vez não foi a que teve maior gasto e sim a função da buscaExaustiva dentro da main (2,01%), o que faz sentido, afinal ela é a responsável pela busca exaustiva de todas as combinações possíveis de filmes de forma recursiva e, em cada passo, decide se o filme atual deve ser selecionado ou não. Para tomar essa decisão, a função realiza diversas verificações, como verificar se a seleção atual é válida (respeita o limite de filmes por categoria) e se o filme atual não se sobrepõe a nenhum filme já selecionado:
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/fc7d1aa3-81d6-4347-b09f-8102707ee854)
+
+A outra parte do código que consome bastante tempo é a primeira recursiva da função buscaExaustiva (1,38%), pois embora essa chamada recursiva possa reduzir o espaço de busca ao não selecionar o filme atual, ainda é necessário percorrer todos os filmes restantes e verificar todas as combinações possíveis. Portanto, essa parte do código também consome um tempo significativo de processamento:
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/b28fa279-6a4d-4b6a-b4f5-f29d207c5e2a)
 
 
-Ao fazer a análise de todo o processamento do código, primeiramente é tomado nota do número de instrucões, que foi de 2,442,005, ou seja, a menor comparado com as heurísticas anteriores. Neste caso, houveram 3 partes principais do código que mais gastaram tempo. O input dos filmes (1,49%) dessa vez não foi a que teve maior gasto e sim a função da buscaExaustiva dentro da main (2,01%), o que faz sentido, afinal ela é a responsável pela busca exaustiva de todas as combinações possíveis de filmes de forma recursiva e, em cada passo, decide se o filme atual deve ser selecionado ou não. Para tomar essa decisão, a função realiza diversas verificações, como verificar se a seleção atual é válida (respeita o limite de filmes por categoria) e se o filme atual não se sobrepõe a nenhum filme já selecionado.
+**Obs.:** Uma possível razão da segunda recursiva do código desta mesma função não ter um gasto significativo como as outras (0,63%) é por causa da verificação de sobreposição (hasOverlap), o que pode ajudar a reduzir o espaço de busca, evitando a análise de combinações que já sabemos que não são válidas. Isso pode levar a uma economia de tempo de processamento significativa, pois evita a exploração de ramos desnecessários no espaço de busca:
 
-A outra parte do código que consome bastante tempo é a primeira recursiva da função buscaExaustiva (1,38%), pois embora essa chamada recursiva possa reduzir o espaço de busca ao não selecionar o filme atual, ainda é necessário percorrer todos os filmes restantes e verificar todas as combinações possíveis. Portanto, essa parte do código também consome um tempo significativo de processamento.
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/5ce642e7-33e3-46e3-be66-0caa236eac94)
 
-**Obs.:** Uma possível razão da segunda recursiva do código desta mesma função não ter um gasto significativo como as outras (0,63%) é por causa da verificação de sobreposição (hasOverlap), o que pode ajudar a reduzir o espaço de busca, evitando a análise de combinações que já sabemos que não são válidas. Isso pode levar a uma economia de tempo de processamento significativa, pois evita a exploração de ramos desnecessários no espaço de busca.
 
 ## Busca Exaustiva x Heurística Gulosa
 Dentre as heurísticas estudadas anteriormente, a heurística gulosa teve o melhor desempenho. Então, será feita uma comparação deste novo algoritmo de busca exaustiva com ela.
