@@ -272,6 +272,8 @@ Esta etapa do projeto consiste em resolver nosso problema por meio da biblioteca
 
 Para resolver esse problema utilizando a biblioteca thrust, podemos utilizar um algoritmo de programação dinâmica para construir a solução de forma eficiente. O algoritmo consiste em criar uma matriz dp de tamanho (N+1) x (M+1) para armazenar o número máximo de filmes que podem ser assistidos até o filme i e a categoria j.
 
+O desenvolvimento deste programa, entretanto, não funcionou corretamente, pois como resultado ele não fornece uma solução ótima de maratona de filmes, além de às vezes haver a sobreposição de horários na maratona. Para seu desenolvimento, é feita a seguinte lógica:
+
 O código usa dois loops for aninhados para percorrer todas as combinações possíveis de filmes e categorias.
 - O loop externo percorre os filmes de 1 até n (número de filmes disponíveis para a maratona no input).
 - O loop interno percorre as categorias de 1 até m (número de categorias).
@@ -288,6 +290,7 @@ Caso contrário, se as condições não forem atendidas, o código atualiza max_
 
 Após o loop sobre os filmes anteriores, o código atribui o valor max_count à posição correspondente na matriz de programação dinâmica dp para a combinação atual (dp[(i * (m + 1)) + j] = max_count).
 
-Em seguida, o código verifica se max_count é maior que o número máximo de filmes já selecionados (max_count > maxSelecionados). Se for, atualiza maxSelecionados com o valor de max_count e a duração máxima total com a diferença entre o horário de término e o horário de início do filme atual (duracaoMaxTotal = filmeAtual.fim - filmeAtual.inicio). O processo continua para todas as combinações de filmes e categorias.
+A fim de reconstruir a seleção ótima da maratona é feito um loop for que onde são inicializados os índices i e j com os valores n e m, respectivamente. Esses índices são usados para percorrer a matriz dp. Verifica-se então se o valor atual de dp é igual ao valor anterior de dp na mesma coluna. Se forem iguais, isso significa que o filme correspondente não foi selecionado como parte da solução ótima. Nesse caso, pulamos para a próxima iteração do loop usando a instrução continue.
 
-Essa etapa de programação dinâmica permite determinar a seleção ótima de filmes para a maratona, considerando as restrições de categorias e horários de início e término dos filmes. O resultado final será armazenado na matriz dp e usado posteriormente para reconstruir a seleção ótima de filmes.
+Se o filme correspondente foi selecionado, recuperamos o filme da lista de filmes_filtrados usando o índice i - 1. Esse filme é armazenado na variável filmeSelecionado e adiciona-se o filmeSelecionado à lista melhorSelecao_dev, que armazena a seleção ótima dos filmes. É verificado também o tempo de tela da maratona, se for maior, substitui pela que tem maior duração (duracaoMaxTotal).
+
