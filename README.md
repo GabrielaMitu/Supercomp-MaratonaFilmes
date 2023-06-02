@@ -250,7 +250,7 @@ Como é possível observar, ele teve um tempo de execução equivalente ao dobro
 
 **Obs.:** Como ele obteve exatamente o mesmo desempenho em relação ao resultado, o gráfico de eficiência do tempo de tela na maratona em cada um dos inputs será o mesmo que a versão sem openMP. Como pode-se observar no gráfico abaixo, nos pontos verdes que são os inputs, o valor do eixo X que é o número de filmes procede igual, apenas o tempo de execução que muda:
 
-
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/850f4673-f3cc-49f5-ae2f-2d4b1a9d5bd2)
 
 ## Paralelismo com GPU
 
