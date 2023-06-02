@@ -262,7 +262,9 @@ Outro ponto interressante de analisar neste código é o Valgrind dele. Para iss
 
 **Obs.:** O callgrind foi deixado dentro da pasta callgrinds
 
-Primeiramente, nota-se que o número de instruções totais foi muito maior que o resto das heurísticas e busca exaustiva, pois foi de 8,063,230. 
+Primeiramente, nota-se que o número de instruções totais foi muito maior que o resto das heurísticas e busca exaustiva, pois foi de 8,063,230. Além disso, ao fazer uso da função do openMP de "#pragma omp parallel" junto de "#pragma omp for" foi utilizado muito mais poder computacional (6,69% e 4,90% respectivamente nas seções que cobrem), o que prova que as threads realmente atrasaram signficativamente o programa fazendo uma de cada vez a busca exaustiva:
+
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/0c9d9354-71b2-4c26-b6b9-8dd88c3ba258)
 
 ## Paralelismo com GPU
 
