@@ -189,6 +189,8 @@ Para fazer considerações sobre o profiling (valgrind) do código-fonte, foi ut
 
 **Obs.:** O callgrind foi deixado dentro da pasta callgrinds
 
+
+
 Ao fazer a análise de todo o processamento do código, primeiramente é tomado nota do número de instrucões, que foi de 2,442,005, ou seja, a menor comparado com as heurísticas anteriores. Neste caso, houveram 3 partes principais do código que mais gastaram tempo. O input dos filmes (1,49%) dessa vez não foi a que teve maior gasto e sim a função da buscaExaustiva dentro da main (2,01%), o que faz sentido, afinal ela é a responsável pela busca exaustiva de todas as combinações possíveis de filmes de forma recursiva e, em cada passo, decide se o filme atual deve ser selecionado ou não. Para tomar essa decisão, a função realiza diversas verificações, como verificar se a seleção atual é válida (respeita o limite de filmes por categoria) e se o filme atual não se sobrepõe a nenhum filme já selecionado.
 
 A outra parte do código que consome bastante tempo é a primeira recursiva da função buscaExaustiva (1,38%), pois embora essa chamada recursiva possa reduzir o espaço de busca ao não selecionar o filme atual, ainda é necessário percorrer todos os filmes restantes e verificar todas as combinações possíveis. Portanto, essa parte do código também consome um tempo significativo de processamento.
@@ -220,15 +222,15 @@ Outros inputs que foram utilizados para análise foram: input15.txt, input25.txt
 
 Para uma melhor visualização, foi feito um gráfico da eficiência do tempo de tela na maratona em cada um dos inputs:
 
-![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/ca559150-424e-49b8-b9a6-9f6d72710815)
+![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/c4187cdb-4320-4298-90d8-f58e6fd2b829)
 
-Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. Entretanto, o tempo de execução é muito mais demorado. Até 25 filmes a busca exaustiva consegue ter um tempo de processamento maior que a gulosa, mas ainda razoável. Já colocando o dobro de filmes, ou seja, 50 filmes, ela aumenta o tempo de execução em 23 segundos:
+Em todos os casos, como esperado, a busca exaustiva teve um desempenho melhor. Entretanto, o tempo de execução é muito mais demorado. Até 35 filmes a busca exaustiva consegue ter um tempo de processamento maior que a gulosa, mas ainda razoável. Já colocando 50 filmes, ela aumenta o tempo de execução em 24 segundos:
 
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/14a796e1-54cb-468a-ba70-7bcc6d7cd287)
 
 ## Exaustiva com OpenMP
 
-Outra implementação feita no estudo é a tulização de OpenMP junto com a busca exaustiva. O OpenMP permitirá que os desenvolvedores escrevam programas que podem ser executados de forma eficiente em sistemas paralelos, logo é esperado que o tempo de execução seja menor.
+Outra implementação feita no estudo é a utilização de OpenMP junto com a busca exaustiva. O OpenMP permitirá que os desenvolvedores escrevam programas que podem ser executados de forma eficiente em sistemas paralelos, logo é esperado que o tempo de execução seja menor.
 
 Nessa versão, a busca exaustiva é distribuída entre as threads usando a diretiva #pragma omp for, enquanto a região crítica de atualização das melhores soluções é protegida por #pragma omp critical. Cada thread terá sua própria cópia das variáveis selecaoAtual e cntCat para evitar condições de corrida.
 
