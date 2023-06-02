@@ -248,6 +248,10 @@ Como resultado do tempo de execução, ele teve um desempenho pior do que o espe
 
 Como é possível observar, ele teve um tempo de execução equivalente ao dobro do que a busca exaustiva. Uma das razões é que a busca exaustiva em si é um algoritmo de complexidade exponencial, o que significa que o tempo de execução aumenta rapidamente à medida que o tamanho do problema aumenta. Além disso, o uso de regiões críticas e a sincronização entre threads introduzidas pelas diretivas #pragma omp critical podem ter um impacto negativo no desempenho quando o número de threads aumenta.
 
+**Obs.:** Como ele obteve exatamente o mesmo desempenho em relação ao resultado, o gráfico de eficiência do tempo de tela na maratona em cada um dos inputs será o mesmo que a versão sem openMP. Como pode-se observar no gráfico abaixo, nos pontos verdes que são os inputs, o valor do eixo X que é o número de filmes procede igual, apenas o tempo de execução que muda:
+
+
+
 ## Paralelismo com GPU
 
 Esta etapa do projeto consiste em resolver nosso problema por meio da biblioteca Thrust.
