@@ -133,3 +133,8 @@ int main() {
 // PARA RODAR NO CMD:
 // g++ -o exaustivaMP exaustivaMP.cpp -fopenmp
 // ./exaustivaMP < inputs/input0.txt
+
+// PARA RODAR PARA ANALISAR COM VALGRIND:
+// g++ -Wall -O3 -g exaustivaMP.cpp -o exaustivaMP -fopenmp
+// valgrind --tool=callgrind ./exaustivaMP < inputs/input0.txt
+// callgrind_annotate callgrind.out.45949 exaustivaMP.cpp

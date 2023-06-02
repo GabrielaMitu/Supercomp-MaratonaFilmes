@@ -252,6 +252,18 @@ Como é possível observar, ele teve um tempo de execução equivalente ao dobro
 
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/850f4673-f3cc-49f5-ae2f-2d4b1a9d5bd2)
 
+Outro ponto interressante de analisar neste código é o Valgrind dele. Para isso foram feitos os eguintes comandos:
+
+> g++ -Wall -O3 -g exaustivaMP.cpp -o exaustivaMP -fopenmp
+
+> valgrind --tool=callgrind ./exaustivaMP < inputs/input0.txt
+
+> callgrind_annotate callgrind.out.45949 exaustivaMP.cpp
+
+**Obs.:** O callgrind foi deixado dentro da pasta callgrinds
+
+Primeiramente, nota-se que o número de instruções totais foi muito maior que o resto das heurísticas e busca exaustiva, pois foi de 8,063,230. 
+
 ## Paralelismo com GPU
 
 Esta etapa do projeto consiste em resolver nosso problema por meio da biblioteca Thrust.
@@ -268,9 +280,7 @@ Ele cria uma variável max_count para armazenar o número máximo de filmes sele
 
 Em seguida, há um terceiro loop for que percorre os filmes anteriores (até o índice i-1) para comparar com o filme atual.
 
-Dentro desse terceiro loop, o código verifica se o filme anterior pertence à categoria atual (filmeAnterior.categoria == j), se seu horário de término é menor ou igual ao horário de início do filme atual (filmeAnterior.fim <= filmeAtual.inicio), e se a quantidade máxima de filmes permitida para essa categoria ainda não foi atingida (dp[(k * (m + 1)) + j - 1] + 1 <= max_filmes_dev[j - 1]).
-
-Se todas essas condições forem verdadeiras, o código atualiza max_count para o valor máximo entre max_count e o número de filmes selecionados até o filme anterior na categoria anterior, mais 1 (dp[(k * (m + 1)) + j - 1] + 1).
+Dentro desse terceiro loop, o código verifica se o filme anterior pertence à categoria atual (filmeAnterior.categoria == j), se seu horário de término é menor ou igual ao horário de início do filme atual (filmeAnterior.fim <= filmeAtual.inicio), e se a quantidade máxima de filmes permitida para essa categoria ainda não foi atingida (dp[(k * (m + 1)) + j - 1] + 1 <= max_filmes_dev[j - 1]). Se todas essas condições forem verdadeiras, o código atualiza max_count para o valor máximo entre max_count e o número de filmes selecionados até o filme anterior na categoria anterior, mais 1 (dp[(k * (m + 1)) + j - 1] + 1).
 
 Caso contrário, se as condições não forem atendidas, o código atualiza max_count para o valor máximo entre max_count e o número de filmes selecionados até o filme anterior na mesma categoria (dp[(k * (m + 1)) + j]).
 
