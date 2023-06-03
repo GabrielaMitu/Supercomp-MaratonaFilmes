@@ -268,11 +268,11 @@ Primeiramente, nota-se que o número de instruções totais foi muito maior que 
 
 ## Paralelismo com GPU
 
-Esta etapa do projeto consiste em resolver nosso problema por meio da biblioteca Thrust.
+Esta etapa do projeto consiste em resolver nosso problema por meio da biblioteca Thrust (foi feita dentro do arquivo jupyter notebook: "Supercomp-ProjetoGPU.ipynb").
 
 Para resolver esse problema utilizando a biblioteca thrust, podemos utilizar um algoritmo de programação dinâmica para construir a solução de forma eficiente. O algoritmo consiste em criar uma matriz dp de tamanho (N+1) x (M+1) para armazenar o número máximo de filmes que podem ser assistidos até o filme i e a categoria j.
 
-O desenvolvimento deste programa, entretanto, não funcionou corretamente, pois como resultado ele não fornece uma solução ótima de maratona de filmes, além de às vezes haver a sobreposição de horários na maratona. Para seu desenolvimento, é feita a seguinte lógica:
+O desenvolvimento deste programa, entretanto, não funcionou corretamente, pois como resultado ele não fornece uma solução ótima de maratona de filmes, além de, às vezes, haver a sobreposição de horários na maratona. Para seu desenolvimento, é feita a seguinte lógica:
 
 O código usa dois loops for aninhados para percorrer todas as combinações possíveis de filmes e categorias.
 - O loop externo percorre os filmes de 1 até n (número de filmes disponíveis para a maratona no input).
@@ -292,10 +292,32 @@ Após o loop sobre os filmes anteriores, o código atribui o valor max_count à 
 
 A fim de reconstruir a seleção ótima da maratona é feito um loop for que onde são inicializados os índices i e j com os valores n e m, respectivamente. Esses índices são usados para percorrer a matriz dp. Verifica-se então se o valor atual de dp é igual ao valor anterior de dp na mesma coluna. Se forem iguais, isso significa que o filme correspondente não foi selecionado como parte da solução ótima. Nesse caso, pulamos para a próxima iteração do loop usando a instrução continue.
 
-Se o filme correspondente foi selecionado, recuperamos o filme da lista de filmes_filtrados usando o índice i - 1. Esse filme é armazenado na variável filmeSelecionado e adiciona-se o filmeSelecionado à lista melhorSelecao_dev, que armazena a seleção ótima dos filmes. É verificado também o tempo de tela da maratona, se for maior, substitui pela que tem maior duração (duracaoMaxTotal).
+Se o filme correspondente foi selecionado, recupera-se o filme da lista de filmes_filtrados usando o índice i - 1. Esse filme é armazenado na variável filmeSelecionado e adiciona-se o filmeSelecionado à lista melhorSelecao_dev, que armazena a seleção ótima dos filmes. É verificado também o tempo de tela da maratona, se for maior, substitui pela maratona que tiver maior duração (duracaoMaxTotal).
+
+## Análise teórica
+
+Se a paralelização por GPU funcionasse corretamente, seria possível fazer adequadamente as comparações feitas anteriormente como a comparação com Busca Exaustiva do tempo de execução e tempo de tela da maratona em cada input. 
+
+O código de busca exaustiva com OpenMP implementa uma abordagem de força bruta, onde todas as combinações possíveis de filmes são testadas para encontrar a seleção ótima com várias threads. Esse tipo de abordagem é geralmente muito custoso computacionalmente, pois requer a avaliação de um grande número de combinações.
+
+Por outro lado, a lógica de programação dinâmica com GPU aproveita o poder de processamento paralelo oferecido pelas GPUs para acelerar os cálculos. A programação dinâmica divide o problema em subproblemas menores e armazena os resultados intermediários para evitar recálculos desnecessários. A execução paralela em GPU pode ser muito eficiente para lidar com grandes quantidades de dados e realizar cálculos intensivos.
+
+Neste caso então, a lógica de programação dinâmica com GPU tem potencial para ter um desempenho superior ao da busca exaustiva com OpenMP.
+
+### **Possíveis Análises**
+
+Essas são possíveis análises que poderiam ser feitas de forma mais profunda se o programa funcionasse corretamente:
+
+**Tempo de execução em cada um dos inputs:**
 
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/3df3fa04-ca1d-4883-b38b-566a3bd0c010)
 
+**Obs.:** Os inputs utilizados foram os mesmos da busca exaustiva (input0.txt, input15.txt, input25.txt, input35.txt, input50.txt) e esperaria-se um tempo de execução menor que a busca exaustiva
+
+**Tempo de Tela:**
+
 ![image](https://github.com/GabrielaMitu/Supercomp-MaratonaFilmes/assets/49621844/da56ca99-b604-4c45-9ff5-fffb9c86af55)
+
+**Obs.:** Seria esperado um desempenho melhor de tempo de tela das maratonas. No caso deste gráfico, os números maiores de output (35 e 50 filmes) tiveram uma queda de desempenho, o que não faz sentido dado que o programa teria mais opções de escolha de filmes
 
 
